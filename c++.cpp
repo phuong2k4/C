@@ -4822,7 +4822,7 @@ int main(){
 */
 
 
-
+/*
 int check(char a[],char b[]){
     int n1 = strlen(a);
     int n2 = strlen(b);
@@ -4855,5 +4855,5 @@ int main(){
     }
     return 0;
 }
-
+*/
 //last version of the program
