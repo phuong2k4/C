@@ -4823,6 +4823,7 @@ int main(){
 
 
 /*
+xoa mot tu khoi xau ki tu
 int check(char a[],char b[]){
     int n1 = strlen(a);
     int n2 = strlen(b);
