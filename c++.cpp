@@ -4858,3 +4858,42 @@ int main(){
 }
 */
 //last version of the program
+
+//tu bi lap lai dau tien
+
+int main(int argc, char *argv[]){
+    int tc;
+    cin >> tc;
+    getchar();
+    while (tc--){
+        char c[1000];
+        gets(c);
+        char s[100][100];
+        int n = 0;
+        char *token = strtok(c, " ");
+        while(token != NULL){
+            strcpy(s[n++],token);
+            token = strtok(NULL, " ");
+        }
+    int res = 0;
+    cout << "Test#: ";
+    for(int i = 0 ;i<n;i++){
+        int ok = 0;
+        for(int j = 0 ;j<i;j++){
+            if(strcmp(s[i],s[j])==0){
+                ok = 1;
+                break;
+            }
+        }
+        if(ok){
+            cout << s[i] << endl;
+            res = 1;
+            break;
+            }
+    }
+    if(!res){
+        cout << "None" << endl;
+    }
+    
+    }
+}
