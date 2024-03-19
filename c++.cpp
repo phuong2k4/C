@@ -4915,7 +4915,7 @@ int main(int argc, char *argv[]){
 */
 
 //kiem tra hoan doi ki tu neu co the
-
+/*
 int main(){
     int t;
     cin >> t;
@@ -4941,4 +4941,5 @@ int main(){
     }
     return 0;
 }
+*/
 //last update
