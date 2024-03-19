@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/C&C++",
-      "program": "d:/C&C++/build/Debug/outDebug",
+      "cwd": "d:/Project28-C++",
+      "program": "d:/Project28-C++/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -4860,7 +4860,7 @@ int main(){
 //last version of the program
 
 //tu bi lap lai dau tien
-
+/*
 int main(int argc, char *argv[]){
     int tc;
     cin >> tc;
@@ -4896,4 +4896,48 @@ int main(int argc, char *argv[]){
     }
     
     }
+}
+
+*/
+
+//chuoi con chuoi cha
+/*
+int main(int argc, char *argv[]){
+    char a[100], b[100];
+    cin >> a >> b;
+    if(strstr(b,a)!=NULL){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
+    return 0;
+}
+*/
+
+//kiem tra hoan doi ki tu neu co the
+
+int main(){
+    int t;
+    cin >> t;
+    getchar();
+    while(t--){
+        char c[1000];
+        gets(c);
+        int cnt[256] = {0};
+        for(int i = 0;i<strlen(c);i++){
+            cnt[c[i]]++;
+        }
+        int res = 0;
+        for(int i = 0;i<256;i++){
+            if(cnt[i]%2==1){
+                ++res;
+            }
+        }
+        if(res<=1){
+            cout << "Yes" << endl;
+        }else{
+            cout << "No" << endl;
+        }
+    }
+    return 0;
 }
