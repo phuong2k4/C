@@ -4917,29 +4917,27 @@ int main(int argc, char *argv[]){
 //kiem tra hoan doi ki tu neu co the
 /*
 int main(){
-    int t;
-    cin >> t;
+    int tc;
+    cin >> tc;
     getchar();
-    while(t--){
+    while(tc--){
         char c[1000];
         gets(c);
-        int cnt[256] = {0};
+        int a[256] = {0};
         for(int i = 0;i<strlen(c);i++){
-            cnt[c[i]]++;
+            a[c[i]]++;
         }
         int res = 0;
         for(int i = 0;i<256;i++){
-            if(cnt[i]%2==1){
+            if(a[i]%2==1){
                 ++res;
             }
         }
-        if(res<=1){
-            cout << "Yes" << endl;
-        }else{
-            cout << "No" << endl;
-        }
+        if(res<=1)cout << "yes" << endl;
+        else cout << "no" << endl;
     }
     return 0;
 }
 */
 //last update
+
