@@ -4954,7 +4954,7 @@ int main(){
         }
         for(int i = 0;i<26;i++){
             if(cnt[i]==1){
-                cout << i + 'A' << endl;
+                printf("%c",i+'A');
             }
         }
     }
