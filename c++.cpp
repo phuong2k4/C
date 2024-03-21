@@ -4941,3 +4941,22 @@ int main(){
 */
 //last update
 
+int main(){
+    int t;
+    cin >> t;
+    getchar();
+    while(t--){
+        char c[100001];
+        gets(c);
+        int cnt[26] = {0};
+        for(int i = 0;i<strlen(c);i++){
+            cnt[c[i]-'A']++;
+        }
+        for(int i = 0;i<26;i++){
+            if(cnt[i]==1){
+                cout << i + 'A' << endl;
+            }
+        }
+    }
+    return 0;
+}
