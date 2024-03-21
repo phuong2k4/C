@@ -4940,23 +4940,23 @@ int main(){
 }
 */
 //last update
-
-int main(){
-    int t;
-    cin >> t;
-    getchar();
-    while(t--){
-        char c[100001];
-        gets(c);
-        int cnt[26] = {0};
-        for(int i = 0;i<strlen(c);i++){
-            cnt[c[i]-'A']++;
-        }
-        for(int i = 0;i<26;i++){
-            if(cnt[i]==1){
-                printf("%c",i+'A');
-            }
-        }
-    }
-    return 0;
-}
+////In ra ki tu khong bi lap lai
+// int main(){
+//     int t;
+//     cin >> t;
+//     getchar();
+//     while(t--){
+//         char c[100001];
+//         gets(c);
+//         int cnt[26] = {0};
+//         for(int i = 0;i<strlen(c);i++){
+//             cnt[c[i]-'A']++;
+//         }
+//         for(int i = 0;i<26;i++){
+//             if(cnt[i]==1){
+//                 printf("%c",i+'A');
+//             }
+//         }
+//     }
+//     return 0;
+// }
