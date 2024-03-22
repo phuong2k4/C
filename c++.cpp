@@ -4987,3 +4987,26 @@ int main(){
 //     }
 //     return 0;
 // }
+
+///Biggest Number in the string 
+
+int main(){
+    int t;
+    cin >> t;
+    getchar();
+    while(t--){
+        char s[100001];
+        gets(s);
+        int res = -1e9;
+        for(int i = 0 ;i<strlen(s);i++){
+            int cnt = 0;
+            while(i<strlen(s) && isdigit(s[i])){
+                cnt = cnt * 10 + s[i] - '0';
+                ++i;
+            }
+            if(res < cnt)res = cnt;
+        }
+        cout << res;
+    }
+    return 0;
+}
