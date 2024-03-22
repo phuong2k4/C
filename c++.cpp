@@ -4961,28 +4961,29 @@ int main(){
 //     return 0;
 // }
 
-int main(){
-    int t;
-    cin >> t;
-    getchar();
-    while(t--){
-        char s[100001];
-        gets(s);
-        int sum = 0;
-        int res = 0;
-        for(int i = 0 ;i < strlen(s);i++){
-            if(isdigit(s[i])){
-                res = res * 10 + s[i] - '0';
-            }
-            else{
-                sum += res;
-                res = 0;
-            }
-        }
-        if(isdigit(s[strlen(s)-1])){
-            sum += res;
-        }
-        cout << sum <<endl;
-    }
-    return 0;
-}
+///Tong cua so trong mot chuoi
+// int main(){
+//     int t;
+//     cin >> t;
+//     getchar();
+//     while(t--){
+//         char s[100001];
+//         gets(s);
+//         int sum = 0;
+//         int res = 0;
+//         for(int i = 0 ;i < strlen(s);i++){
+//             if(isdigit(s[i])){
+//                 res = res * 10 + s[i] - '0';
+//             }
+//             else{
+//                 sum += res;
+//                 res = 0;
+//             }
+//         }
+//         if(isdigit(s[strlen(s)-1])){
+//             sum += res;
+//         }
+//         cout << sum <<endl;
+//     }
+//     return 0;
+// }
