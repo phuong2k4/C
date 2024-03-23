@@ -4987,3 +4987,50 @@ int main(){
 //     }
 //     return 0;
 // }
+
+int dt[10000],cnt=0;
+
+void solution(char c[]){
+    for (int i = 0;i<strlen(c);i++){
+        if(isdigit(c[i])){
+            int tmp = 0;
+            while(c[i]!='*'){
+                tmp = tmp * 10 + c[i] - '0';
+                i++;
+            }
+            i+=3;
+            int mu = 0;
+            while(isdigit(c[i])){
+                mu = mu * 10 + c[i]-'0';
+                i++;
+            }
+            dt[mu] +=tmp;
+        }
+    }
+}
+
+int main(){
+    int t;
+    cin >> t;
+    getchar();
+    for(int i = 0;i<t;i++){
+        char c1[10000],c2[10000];
+        gets(c1);gets(c2);
+        memset(dt,0,sizeof(dt));
+        cnt = 0;
+        solution(c1);
+        solution(c2);
+        for (int i = 10000;i>=0;i--){
+            if(dt[i]) ++cnt;    
+        }
+        cout << "#Test: " << i;
+        for(int i =10000;i>=0;i--){
+            if(dt[i]!=0){
+                cout << dt[i] << i  <<  endl;
+                --cnt;
+                if(cnt!=0)cout << '+' ;
+            }
+        }
+        cout << endl;
+    }
+}
