@@ -4996,13 +4996,13 @@ void solution(char c[]){
             int tmp = 0;
             while(c[i]!='*'){
                 tmp = tmp * 10 + c[i] - '0';
-                i++;
+                ++i;
             }
-            i+=3;
+            i+=2;
             int mu = 0;
             while(isdigit(c[i])){
                 mu = mu * 10 + c[i]-'0';
-                i++;
+                ++i;
             }
             dt[mu] +=tmp;
         }
@@ -5013,7 +5013,7 @@ int main(){
     int t;
     cin >> t;
     getchar();
-    for(int i = 0;i<t;i++){
+    for(int j = 0;j<t;j++){
         char c1[10000],c2[10000];
         gets(c1);gets(c2);
         memset(dt,0,sizeof(dt));
@@ -5023,12 +5023,12 @@ int main(){
         for (int i = 10000;i>=0;i--){
             if(dt[i]) ++cnt;    
         }
-        cout << "#Test: " << i;
+        cout << "#Test " << j << ": ";
         for(int i =10000;i>=0;i--){
             if(dt[i]!=0){
-                cout << dt[i] << i  <<  endl;
+                cout << dt[i] << "*x^"<< i;
                 --cnt;
-                if(cnt!=0)cout << '+' ;
+                if(cnt!=0)cout << " + " ;
             }
         }
         cout << endl;
