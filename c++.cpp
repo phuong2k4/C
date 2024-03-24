@@ -5060,7 +5060,7 @@ int lis(char c[]){
 
 int main(){
     char c[1000];
-    cin >> c;
+    gets(c);
     cout << lis(c);
     return 0;
 }
