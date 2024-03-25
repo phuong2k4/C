@@ -5063,3 +5063,50 @@ int main(){
 //     cout << lis(c);
 //     return 0;
 // }
+
+
+/////nhat so da con thieu
+/*
+int main(){
+    int n;
+    cin >> n;
+    char c[1000];
+    cin >> c;
+    int cnt = 0;
+    for(int i = 0;i<n-1;i++){
+        if(c[i]==c[i+1]){
+            cnt++;
+        }
+    }
+    cout << cnt << endl;
+    return 0;
+}
+
+*/
+
+/////create the word "hello" by deleting character in the string
+
+// int solution(char str[]){
+//     char form[5] = {'h','e','l','l','o'};
+//     int count = 0;
+//     for(int element = 0;element<strlen(str);element++){
+//         if(str[element] == form[count]){
+//             ++count;
+//         }
+//         if(count==5){
+//             return 1;
+//         }
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     char str[1000];
+//     cin >> str;
+//     if(solution(str)){
+//         cout << "Yes" << endl;
+//     }else{
+//         cout << "No" << endl;
+//     }
+//     return 0;
+// }
