@@ -5111,25 +5111,28 @@ int main(){
 //     return 0;
 // }
 
-
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        char c[1000];
-        cin >> c;
-        int index = -1;
-        int res = 0;
-        for(int i = 0;i<strlen(c);i++){
-            if(c[i]=='1'){
-                if(index==-1)index = i;
-                else{
-                    res += i - index - 1;
-                    index = i;
-                }
-            }
-        }
-        cout << res << endl;
-    }
-    return 0;
-}
+///////tat ca cac so 1 trong chuoi tao thanh mot doan lien ke
+/// 
+// int main(){
+//     int t;
+//     cin >> t;
+//     getchar();
+//     while(t--){
+//         char s[100];
+//         cin >> s;
+//         int index = -1;
+//         int res = 0;
+//         for(int i =0 ;i<strlen(s);i++){
+//             if(s[i]=='1'){
+//                 if(index == -1){
+//                     index = i;
+//                 }else{
+//                     res += i - index - 1;
+//                     index = i;
+//                 }
+//             }
+//         }
+//         cout << res << endl;
+//     }
+//     return 0;
+// }
