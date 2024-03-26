@@ -5137,3 +5137,31 @@ int main(){
 //     return 0;
 // }
 
+int solution(char c[],int n){
+    int index = -1;
+    for(int i = 0 ;i<n;i++){
+        if(c[i]=='8'){
+            index = i;
+            break;
+        }
+    }
+    if(index == -1) return 0;
+    if(n-1-index >=10)return 1;
+    return 0;
+}
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        char c[1000];
+        if(solution(c,n)){
+            cout << "Yes" << endl;
+        }else{
+            cout << "No" << endl;
+        }
+    }
+    return 0;
+}
