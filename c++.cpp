@@ -5166,3 +5166,21 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+///dem so xau con la xau chan
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     char s[100000];
+//     cin >> s;
+//     int res = 0;
+//     for(int i = 0;i<n;i++){
+//         if((s[i]-'0')%2==0){
+//             res += i+1;
+//         }
+//     }
+//     cout << res << endl;
+//     return 0;
+// }
