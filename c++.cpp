@@ -5186,3 +5186,40 @@ int main(){
 // }
 
 
+//////chuyen doi so la ma sang dang thap phan
+
+int value[] = {5,10,50,100,500,1000};
+
+char s[]= "IVXLCDM";
+
+int findPos(char c){
+    for(int i = 0;i<7;i++){
+        if(s[i]==c) return i;
+    }
+}
+
+int solution(char c[]){
+    int n = strlen(c);
+    int res = value[findPos(c[n-1])];
+    for(int i = n-1;i>0;i--){
+        int pos1 = findPos(c[i]);
+        int pos2 = findPos(c[i-1]);
+        if(value[pos1]<=value[pos2]){
+            res += value[pos2];
+        }else{
+            res -= value[pos1];
+        }
+        return res;
+    }
+}
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        char c[1000];
+        cin >> c;
+        cout << solution(c) << endl;
+    }
+    return 0;
+}
