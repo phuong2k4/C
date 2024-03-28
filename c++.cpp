@@ -5187,7 +5187,7 @@ int main(){
 
 //////chuyen doi so la ma sang dang thap phan
 
-// int value[] = {5,10,50,100,500,1000};
+// int value[] = {1,5,10,50,100,500,1000};
 
 // char s[]= "IVXLCDM";
 
@@ -5206,10 +5206,10 @@ int main(){
 //         if(value[pos1]<=value[pos2]){
 //             res += value[pos2];
 //         }else{
-//             res -= value[pos1];
+//             res -= value[pos2];
 //         }
-//         return res;
 //     }
+//     return res;
 // }
 
 // int main(){
