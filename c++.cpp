@@ -5250,6 +5250,7 @@ int main(){
 }
 */
 
+/*
 int solution(char c[]){
     int res = 1;
     int cnt = 1;
@@ -5274,3 +5275,6 @@ int main(){
         cout << solution(c) << endl;
     }
 }
+*/
+
+
