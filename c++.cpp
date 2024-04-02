@@ -5277,3 +5277,57 @@ int main(){
 }
 */
 
+///Tong cua hai so nguyen lon
+
+void reverse(int arrNum[],int totalNum){
+    int left = 0, right = totalNum - 1;
+    while(left < right){
+        int temp = arrNum[left];
+        arrNum[left] = arrNum[right];
+        arrNum[right] = temp;
+        left++;
+        right--;
+    }
+}
+
+void SumOfTint(char num1[],char num2[]){
+    int totalN1 = strlen(num1),totalN2 = strlen(num2),n=0;
+    int strToNumB[totalN1],strToNumS[totalN2],sumOf2Arr[totalN1+1];
+    for(int index = 0;index <totalN1;index++)
+    {
+        strToNumB[index] = num1[index] - '0';
+    } 
+    for(int index = 0;index <totalN2;index++){
+        strToNumS[index] = num2[index] - '0';
+    }
+    reverse(strToNumB,totalN1);reverse(strToNumS,totalN2);
+    for(int index = totalN2;index<totalN1;index++){
+        strToNumS[index]=0;
+    }
+    int miss = 0;
+    for(int index = 0;index <totalN1;index++){
+        int temp = num1[index] + num2[index] + miss;
+        sumOf2Arr[n++] = temp%10;
+        miss = temp/10;
+    }
+    if(miss) sumOf2Arr[n++] = miss;
+    for(int index = n-1;index>=0;index--){
+        cout << sumOf2Arr[index];
+    }
+}
+
+int main(int argv, char* argc[]){
+    int testcase;
+    cin >> testcase;
+    while(testcase--){
+        char strB[1001],strS[1001];
+        cin >> strB >> strS;
+        if(strlen(strB)>=strlen(strS)){
+            SumOfTint(strB,strS);
+        }else{
+            SumOfTint(strS,strB);
+        }
+        cout << endl;
+    }
+    return 0;
+}
