@@ -5332,6 +5332,8 @@ int main(){
 //     return 0;
 // }
 
+
+//hieu cua hai so nguyen lon
 void reverse(int arr[],int total){
     int left = 0, right = total-1;
     while(left<right){
