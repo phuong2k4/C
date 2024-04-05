@@ -5331,3 +5331,70 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+////// Difference of two large integers
+
+// void reverse(int arr[],int total){
+//     int left = 0, right = total-1;
+//     while(left<right){
+//         int temp = arr[left];
+//         arr[left]=arr[right];
+//         arr[right] = temp;
+//         left++;right--;
+//     }
+// }
+
+
+// void MinusOfBInt(char strB[],char strS[]){
+//     int totalOfBInt = strlen(strB), totalOfSInt = strlen(strS) , n = 0;
+//     int strRepos1[totalOfBInt] , strRepos2[totalOfSInt] , strReposTotal[totalOfBInt+1];
+//     for(int index = 0 ; index <= totalOfBInt ; index++){
+//         strRepos1[index] = strB[index] - '0';
+//     }
+//     for(int index = 0 ; index <= totalOfSInt ; index++){
+//         strRepos2[index] = strS[index] - '0';
+//     }
+
+//     reverse(strRepos1,totalOfBInt);reverse(strRepos2,totalOfSInt);
+
+//     for(int index = totalOfSInt;index <totalOfBInt;index++){
+//         strRepos2[index]=0;
+//     }
+//     int miss = 0;
+//     for(int index = 0;index <totalOfBInt;index++){
+//         int temp = strRepos1[index] - strRepos2[index] - miss;
+//         if(temp < 0){
+//             miss = 1;
+//             strReposTotal[n++] = 10 + temp;
+//         }
+//         else{
+//             strReposTotal[n++] = temp;
+//             miss = 0;
+//         }
+//     }
+//     int check = 0;
+//     for(int index = n-1;index >=0;index--){
+//         if(check == 0 && strReposTotal[index]){
+//             check = 1;
+//         }
+//         if(check) cout << strReposTotal[index];
+//     }
+//     if(check==0) cout << "0";
+// }
+
+
+// int main(int argc, char* argv[]){
+//     int testcase;
+//     cin >> testcase;
+//     while(testcase--){
+//         char strB[1001],strS[1001];
+//         cin >> strB >> strS;
+//         if(strlen(strB) > strlen(strS) || (strlen(strB) == strlen(strS) && strcmp(strB,strS)>0)){
+//             MinusOfBInt(strB,strS);
+//         }else{
+//             MinusOfBInt(strS,strB);
+//         }
+//         cout << endl;
+//     }
+// }
