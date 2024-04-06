@@ -5399,4 +5399,23 @@ int main(){
 //     }
 // }
 
-// 5/4/2024
+///tong chu so cua so nguyen lon
+
+int sum(char c[]){
+    int res = 0;
+    for(int i = 0 ;i<strlen(c);i++){
+        res += c[i] - '0';
+    }
+    return res;
+}
+
+int main(int argc, char *argv[]){
+    int testcase;
+    cin >> testcase;
+    while(testcase--){
+        char c[1000];
+        cin >> c;
+        cout << sum(c) << endl;
+    }
+    return 0;
+}
