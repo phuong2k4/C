@@ -5425,40 +5425,40 @@ int main(){
 
 
 ///ktra so co phai so thuan nghich va la so chan
-int reversible(char c[]);
-int solution(char c[]);
+// int reversible(char c[]);
+// int solution(char c[]);
 
-int main(int argc, char* argv[]){
-    int testcase;
-    cin >> testcase;
-    while(testcase--){
-        char c[1000];
-        cin >> c;
-        if(reversible(c)&&solution(c)){
-            cout << "Yes" << endl;
-        }else cout << "No" << endl;
-    }
-    return 0;
-}
+// int main(int argc, char* argv[]){
+//     int testcase;
+//     cin >> testcase;
+//     while(testcase--){
+//         char c[1000];
+//         cin >> c;
+//         if(reversible(c)&&solution(c)){
+//             cout << "Yes" << endl;
+//         }else cout << "No" << endl;
+//     }
+//     return 0;
+// }
 
-int reversible(char c[]){
-    int left = 0, right = strlen(c)-1;
-    while(left < right){
-        for(int index = left;index < right;index++){
-            if(c[left] != c[right]){
-                return 0;
-            }
-            left++;right--;
-        }   
-    }
-    return 1;
-}
+// int reversible(char c[]){
+//     int left = 0, right = strlen(c)-1;
+//     while(left < right){
+//         for(int index = left;index < right;index++){
+//             if(c[left] != c[right]){
+//                 return 0;
+//             }
+//             left++;right--;
+//         }   
+//     }
+//     return 1;
+// }
 
-int solution(char c[]){
-    for(int index = 0;index < strlen(c);index++){
-        if(c[index] %2==1){
-            return 0;
-        }
-    }
-    return 1;
-}
+// int solution(char c[]){
+//     for(int index = 0;index < strlen(c);index++){
+//         if(c[index] %2==1){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
