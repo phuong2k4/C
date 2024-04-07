@@ -5401,21 +5401,24 @@ int main(){
 
 ///tong chu so cua so nguyen lon
 
-// int sum(char c[]){
-//     int res = 0;
-//     for(int i = 0 ;i<strlen(c);i++){
-//         res += c[i] - '0';
-//     }
-//     return res;
-// }
+// int solution(char c[]);
 
-// int main(int argc, char *argv[]){
+// int main(int argc, char* argv[]){
 //     int testcase;
 //     cin >> testcase;
 //     while(testcase--){
-//         char c[1000];
-//         cin >> c;
-//         cout << sum(c) << endl;
+//         char str[1000];
+//         cin >> str;
+//         cout << solution(str) << endl;
 //     }
 //     return 0;
+// }
+
+// int solution(char c[]){
+//     int res = 0;
+//     int total = strlen(c);
+//     for(int index = 0 ;index < total ;index++){
+//         res += c[index] - '0';
+//     }
+//     return res;
 // }
