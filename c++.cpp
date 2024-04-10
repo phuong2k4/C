@@ -5463,30 +5463,32 @@ int main(){
 //     return 1;
 // }
 
-int solution(char c[]);
+//so co phai so nguyen to va tong cua chung co chu so cuoi cung la 0
 
-int main(int argc,char* argv[]){
-    int testcase;
-    cin >> testcase;
-    while(testcase--){
-        char c[1000];
-        cin >> c;
-        solution(c) ? cout << "Yes" << endl : cout << "No" << endl;
-    }
-    return 0;
-}
+// int solution(char c[]);
 
-int solution(char c[]){
-    int sum = 0;
-    for(int index = 0;index < strlen(c); index++){
-        int split = c[index] - '0';
-        if(split != 2 && split != 3 && split != 5 && split != 7){
-            return 0;
-        }
-        sum += split;
-    }
-    if(sum %10==0){
-        return 1;
-    }
-    return 0;
-}
+// int main(int argc,char* argv[]){
+//     int testcase;
+//     cin >> testcase;
+//     while(testcase--){
+//         char c[1000];
+//         cin >> c;
+//         solution(c) ? cout << "Yes" << endl : cout << "No" << endl;
+//     }
+//     return 0;
+// }
+
+// int solution(char c[]){
+//     int sum = 0;
+//     for(int index = 0;index < strlen(c); index++){
+//         int split = c[index] - '0';
+//         if(split != 2 && split != 3 && split != 5 && split != 7){
+//             return 0;
+//         }
+//         sum += split;
+//     }
+//     if(sum %10==0){
+//         return 1;
+//     }
+//     return 0;
+// }
