@@ -5492,3 +5492,32 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+///so la so nguyen to va so thuan nghich
+
+int solution(char c[]);
+
+int main(){
+    int testcase;
+    cin >> testcase;
+    while(testcase--){
+        char c[1001];
+        cin >> c;
+        if(solution(c))
+            cout << "Yes" << endl;
+        cout << "No" << endl;
+    }
+    return 0;
+}
+
+int solution(char c[]){
+    int left = 0, right = strlen(c) - 1;
+    while(left <= right){
+        if(c[left]!=c[right]) return 0;
+        if(!(c[left]=='2' || c[left] == '3' || c[left] == '5' || c[left] == '7'))
+            return 0;
+        ++left;--right;
+    }
+    return 1;
+}
