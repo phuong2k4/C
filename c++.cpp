@@ -5524,59 +5524,63 @@ int main(){
 
 ///so nguyen lon chia het cho 6 va so nguyen lon chia het cho 4
 
-// int solution4(char c[]);
-// int solution6(char c[]);
+int solution4(char c[]);
+int solution6(char c[]);
 
 
-// int main(){
+int main(){
 
-//     int testcase;
-//     cin >> testcase;
-//     while(testcase--){
-//         cout << "Which version do you want to use?";
-//         cout << "--------------4 or 6------------";
-//         int version;
-//         cin >> version;
-//         char c[1001];
-//         cin >> c;
-//         switch(version){
-//             case 4:
-//                 if(solution4(c)){
-//                     cout << "Yes" << endl;
-//                 }else{
-//                     cout << "No" << endl;
-//                 }
-//             case 6:
-//                 if(solution6(c)){
-//                     cout << "Yes" << endl;
-//                 }else{
-//                     cout << "No" << endl;
-//                 }
-//         }
-//     }
-//     return 0;
-// }
+    int testcase;
+    cin >> testcase;
+    cout << "Which version do you want to use?\n";
+    cout << "-------------4 or 6------------\n";
+    while(testcase--){
+        int version;
+        cin >> version;
+        cout << "I choose version " << version << endl;
+        char c[1001];
+        cin >> c;
+        switch(version){
+            case 4:
+                if(solution4(c)){
+                    cout << "Yes" << endl;
+                }else{
+                    cout << "No" << endl;
+                }
+                break;
+            case 6:
+                if(solution6(c)){
+                    cout << "Yes" << endl;
+                }else{
+                    cout << "No" << endl;
+                }
+                break;
+        }
+    }
+    return 0;
+}
 
-// int solution4(char c[]){
-//     if(strlen(c)==1){
-//         if((c[0]-'0')%4==0)
-//             return 1;
-//         return 0;
-//     }
-//     int temp = (c[strlen(c)-2]-'0' * 10 + c[strlen(c)-1]-'0');
-//     if(temp % 4 == 0)
-//         return 1;
-//     return 0;
-// }
+int solution4(char c[]){
+    if(strlen(c)==1){
+        if((c[0]-'0')%4==0)
+            return 1;
+        return 0;
+    }
+    int temp = (c[strlen(c)-2]-'0' * 10 + c[strlen(c)-1]-'0');
+    if(temp % 4 == 0)
+        return 1;
+    return 0;
+}
 
-// int solution6(char c[]){
-//     if((c[strlen(c)-1]-'0')%2==1) return 0;
-//     int total = 0;
-//     for(int index = 0;index < strlen(c);index++){
-//         sum += c[i] - '0';
-//     }
-//     if(sum%3==0)return 1;
-//     return 0;
-// }
+int solution6(char c[]){
+    if((c[strlen(c)-1]-'0')%2==1) return 0;
+    int total = 0;
+    for(int index = 0;index < strlen(c);index++){
+        total += c[index] - '0';
+    }
+    if(total%3==0)return 1;
+    return 0;
+}
+
 
 //last version
