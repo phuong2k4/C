@@ -5582,5 +5582,91 @@ int main(){
 //     return 0;
 // }
 
+//////so nguyen lon chia het cho 8 hoac 25
+int solutionTF(char c[]);
+int solutionE(char c[]);
+int solutionTTF(char c[]);
 
-//last version
+int main(){
+    cout << "Which version do you want to do the solution?\n";
+    cout << "------------------1 2 or 3--------------------\n";
+    cout << "-----------1:Big Number devided by 8----------\n";
+    cout << "-----------2:Big Number devided by 25----------\n";
+    cout << "-------3:Big Number devided by 2,3 or 5-------\n";
+    int testcase,version;
+    cin >> testcase  >> version;
+    cout <<"Version: "<< version << endl;
+    while(testcase--){
+        char c[1001];
+        cin >> c;
+        switch(version){
+            case 1:
+                if(solutionE(c)){
+                    cout << "Yes" << endl;
+                }
+                else{
+                    cout << "No" << endl;
+                }
+                break;
+            case 2:
+                if(solutionTF(c)){
+                    cout << "Yes" << endl;
+                }
+                else{
+                    cout << "No" << endl;
+                }
+                break;
+            case 3:
+                if(solutionTTF(c)){
+                    cout << "Yes" << endl;
+                }
+                else{
+                    cout << "No" << endl;
+                }
+                break;
+        }
+    }
+
+    return 0;
+}
+
+///8
+int solutionE(char c[]){
+    if(strlen(c)==1){
+        if(c[0]-'0' % 8 == 0)return 1;
+        return 0;
+    }else if(strlen(c)==2){
+        int temp = (c[0]-'0') * 10 + c[1] - '0';
+        if(temp%8==0)return 1;
+        return 0;
+    }
+
+    int n = strlen(c);
+    int temp = (c[n-3]-'0')*100 + (c[n-2] - '0')*10 + c[n-1] - '0';
+    if(temp%8==0){
+        return 1;
+    }
+    return 0;
+
+}
+
+///25
+int solutionTF(char c[]){
+    if(strlen(c)==1)return 0;
+    int temp = (c[strlen(c)-2] -'0') * 10 + c[strlen(c)-1] - '0';
+    if(temp%25==0)return 1;
+    return 0;
+}
+
+///2,3,5
+int solutionTTF(char c[]){
+    if(c[strlen(c)-1]-'0'!=0){
+        return 0;
+    }
+    int sum = 0;
+    for(int index = 0;index <strlen(c) ;index++){
+        sum += c[index];
+    }
+    if(sum %3==0)return 1;
+    return 0;
+}
