@@ -5675,32 +5675,32 @@ int main(){
 
 ///so nhi phan lon chia het cho 5
 
-int solution(char c[]);
-int main(){
-    int testcase;
-    cin >> testcase;
-    while(testcase--){
-        char c[1000];
-        cin >> c;
-        if(solution(c)){
-            cout << "Yes" << endl;
-        }
-        else{
-            cout << "No" << endl;
-        }
-    }
-    return 0;
-}
-int solution(char c[]){
-    int n = strlen(c);
-    int temp=1, total=0;
-    for(int index = n-1;index >=0;index--){
-        total += (c[index]-'0') * temp;
-        temp *=2;temp%=10;
-        total %=10;
-    }
-    if(total % 5==0){
-        return 1;
-    }
-    return 0;
-}
+// int solution(char c[]);
+// int main(){
+//     int testcase;
+//     cin >> testcase;
+//     while(testcase--){
+//         char c[1000];
+//         cin >> c;
+//         if(solution(c)){
+//             cout << "Yes" << endl;
+//         }
+//         else{
+//             cout << "No" << endl;
+//         }
+//     }
+//     return 0;
+// }
+// int solution(char c[]){
+//     int n = strlen(c);
+//     int temp=1, total=0;
+//     for(int index = n-1;index >=0;index--){
+//         total += (c[index]-'0') * temp;
+//         temp *=2;temp%=10;
+//         total %=10;
+//     }
+//     if(total % 5==0){
+//         return 1;
+//     }
+//     return 0;
+// }
