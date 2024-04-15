@@ -5704,3 +5704,28 @@ int main(){
 //     }
 //     return 0;
 // }
+
+//So du cua so nguyen lon va so long long
+
+int solution(char c[],long long m);
+
+int main(){
+    int testcase;
+    std::cin >> testcase;
+    while(testcase--){
+        char c[1001];
+        long long m;
+        std::cin >> c >> m;
+        std::cout << solution(c,m);
+    }   
+    return 0;
+}
+
+int solution(char c[],long long m)
+{
+    long long res = 0;
+    for(int index  = 0; index <strlen(c);index++){
+        res =(res * 10 +(c[index]-'0')) % m; 
+    }
+    return res;
+}
