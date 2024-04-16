@@ -5729,3 +5729,35 @@ int main(){
 //     }
 //     return res;
 // }
+
+////Ước Chung Lớn Nhất Của Một Số Nguyên Lớn Với Một Số Nguyên 64bit
+
+long long find(char c[],long long m);
+long long gcd(long long n,long long m);
+
+int main(){
+    int testcase;
+    std::cin >> testcase;
+    while(testcase--){
+        char n[1001];
+        long long m;
+        std::cin >> n >> m;
+        long long surplus = find(n,m);
+        std::cout << gcd(m,surplus);
+    }   
+    return 0;
+}
+
+long long find(char c[],long long m){
+    long long res = 0;
+    for(int index = 0;index < strlen(c);index++){
+        res = (res *10) + c[index]- '0';
+        res %=m;
+    }
+    return res;
+}
+
+long long gcd(long long n,long long m){
+    if(m==0)return n;
+    return gcd(m,n%m);
+}
