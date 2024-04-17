@@ -5763,4 +5763,42 @@ int main(){
 // }
 
 
-///
+/// A ^ B % MOD
+
+ll surflus(char Bint[],ll Mod);
+ll solution(ll surflusN, ll indexNum, ll Mod2);
+
+int main(){
+    int testcase;
+    std::cin >> testcase;
+    while(testcase--){
+        char Bint[1001];
+        ll indexNum , Mod;
+        std::cin >> Bint >> indexNum >> Mod;
+        ll surflusN = surflus(Bint,Mod);
+        std::cout << solution(surflusN,indexNum,Mod);
+    }
+}
+
+ll surflus(char Bint[],ll Mod){
+    ll res = 0;
+    for(int index = 0;index < strlen(Bint);index++){
+        res = res * 10 + Bint[index] - '0';
+        res %=Mod;
+    }
+    return res;
+}
+
+ll solution(ll surflusN, ll indexNum, ll Mod){
+    ll res = 1;
+    while(indexNum){
+        if(indexNum%2==1){
+            res *= surflusN;
+            res %= Mod;
+        }
+        surflusN *= surflusN;
+        surflusN %= Mod;
+        indexNum /= 2;
+    }
+    return res;
+}
