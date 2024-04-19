@@ -5829,3 +5829,23 @@ int main(){
 //     return 1;
 // }
 
+//mang 1 chieu
+int main(){
+    int n,arr[100001];
+    std::cin >> n;
+    for(int index = 0;index < n;index++){
+        std::cin >> arr[index];
+    }
+    int biggest = -1e9-1,smallest =1e9+1;
+    for(int index = 0;index<n;index++){
+        if(biggest < arr[index]){
+            biggest = arr[index];
+        }
+        if (smallest > arr[index])
+        {
+            smallest = arr[index];
+        }
+    }
+    std::cout << biggest << " "<< smallest << std::endl;
+
+}
