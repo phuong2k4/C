@@ -5805,26 +5805,26 @@ int main(){
 
 
 ////Kiểm Tra Số Nhị Phân Lớn Chia Hết Cho 2^X
-int solution(char c[],int x);
+// int solution(char c[],int x);
 
-int main(){
-    int testcase;
-    std::cin >> testcase;
-    while(testcase--){
-        char c[1001];
-        int x;
-        std::cin >> c >> x;
-        solution(c,x) ? std::cout << "Yes" : std::cout << "No";
-    }
-    return 0;
-}
+// int main(){
+//     int testcase;
+//     std::cin >> testcase;
+//     while(testcase--){
+//         char c[1001];
+//         int x;
+//         std::cin >> c >> x;
+//         solution(c,x) ? std::cout << "Yes" : std::cout << "No";
+//     }
+//     return 0;
+// }
 
-int solution(char c[],int x){
-    if(strlen(c) < x) return 0;
-    for(int index = 0;index <x;index++){
-        if(c[strlen(c)-index-1] =='1'){
-            return 0;
-        }
-    }
-    return 1;
-}
+// int solution(char c[],int x){
+//     if(strlen(c) < x) return 0;
+//     for(int index = 0;index <x;index++){
+//         if(c[strlen(c)-index-1] =='1'){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
