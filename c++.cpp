@@ -5829,3 +5829,83 @@ int main(){
 //     return 1;
 // }
 
+//mang 1 chieu
+// int main(){
+//     int n,arr[100001];
+//     std::cin >> n;
+//     for(int index = 0;index < n;index++){
+//         std::cin >> arr[index];
+//     }
+//     int biggest = -1e9-1,smallest =1e9+1;
+//     for(int index = 0;index<n;index++){
+//         if(biggest < arr[index]){
+//             biggest = arr[index];
+//         }
+//         if (smallest > arr[index])
+//         {
+//             smallest = arr[index];
+//         }
+//     }
+//     std::cout << biggest << " "<< smallest << std::endl;
+
+// }
+
+// int main(){
+//     int n,arr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     int chan = 0, le = 0;
+//     for(int index = 0;index < n;index++){
+//         if(index % 2 == 0){
+//             le++;
+//         }
+//         else{
+//             chan++;
+//         }
+//     }
+//     cout << chan <<" "<< le;
+//     return 0;
+// }
+
+// int check(int n){
+//     if(n<2)return 0;
+//     for(int index = 2;index <= sqrt(n);index++){
+//         if(n%index==0){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+
+// int main(){
+//     int n,arr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     for(int index = 0 ;index < n;index++){
+//         if(check(arr[index])){
+//             cout << arr[index] << " ";
+//         }
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     int n,arr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     int res = 1e9+1,ind;
+//     for(int index = 0 ;index < n;index++){
+//         if(res >= arr[index]){
+//             res = arr[index];
+//             ind = index;
+//         }
+//     }
+//     cout << ind ;
+//     return 0;
+// }
