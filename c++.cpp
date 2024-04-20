@@ -5893,3 +5893,19 @@ int main(){
 //     return 0;
 // }
 
+int main(){
+    int n,arr[10001];
+    cin >> n;
+    for(int index = 0; index < n;index++){
+        cin >> arr[index];
+    }
+    int res = 1e9+1,ind;
+    for(int index = 0 ;index < n;index++){
+        if(res >= arr[index]){
+            res = arr[index];
+            ind = index;
+        }
+    }
+    cout << ind ;
+    return 0;
+}
