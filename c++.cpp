@@ -5869,26 +5869,27 @@ int main(){
 //     return 0;
 // }
 
-int check(int n){
-    if(n<2)return 0;
-    for(int index = 2;index <= sqrt(n);index++){
-        if(n%index==0){
-            return 0;
-        }
-    }
-    return 1;
-}
+// int check(int n){
+//     if(n<2)return 0;
+//     for(int index = 2;index <= sqrt(n);index++){
+//         if(n%index==0){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
 
-int main(){
-    int n,arr[10001];
-    cin >> n;
-    for(int index = 0; index < n;index++){
-        cin >> arr[index];
-    }
-    for(int index = 0 ;index < n;index++){
-        if(check(arr[index])){
-            cout << arr[index] << " ";
-        }
-    }
-    return 0;
-}
+// int main(){
+//     int n,arr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     for(int index = 0 ;index < n;index++){
+//         if(check(arr[index])){
+//             cout << arr[index] << " ";
+//         }
+//     }
+//     return 0;
+// }
+
