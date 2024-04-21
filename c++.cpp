@@ -5906,15 +5906,15 @@ int main(){
 //             ind = index;
 //         }
 //     }
-        max1 = -1e9-1, max2 = -1e9-1
+        int max1 = -1e9-1, max2 = -1e9-1;
         for(int index = 0 ;index < n;index++){
             if (arr[index] > max1)
             {
                 max2 = max1;
-                max1 = arr[i];
+                max1 = arr[index];
             }
-            else if(a[i] > max2){
-                max2 = a[i];
+            else if(arr[index] > max2 && arr[index] != max1){
+                max2 = arr[index];
             }
         }
 //     cout << ind ;
