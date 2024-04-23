@@ -5906,17 +5906,54 @@ int main(){
 //             ind = index;
 //         }
 //     }
-        int max1 = -1e9-1, max2 = -1e9-1;
-        for(int index = 0 ;index < n;index++){
-            if (arr[index] > max1)
-            {
-                max2 = max1;
-                max1 = arr[index];
-            }
-            else if(arr[index] > max2 && arr[index] != max1){
-                max2 = arr[index];
-            }
-        }
+    // so lon va so lon thu 2
+    // int max1 = -1e9-1, max2 = -1e9-1;
+    // for(int index = 0 ;index < n;index++){
+    //     if (arr[index] > max1)
+    //     {
+    //         max2 = max1;
+    //         max1 = arr[index];
+    //     }
+    //     else if(arr[index] > max2 && arr[index] != max1){
+    //         max2 = arr[index];
+    //     }
+    // }
+    // if(max2 == max1){
+    //     max2 = -1;
+    // }
+    // cout << max1 << " " << max2;
+
 //     cout << ind ;
 //     return 0;
 // }
+
+int check(int n){
+    while(n){
+        int r = n % 10;
+        if(r%2==0)return 0;
+        n/=10;
+    }
+    return 1;
+}
+
+int main(){
+    int n,arr[10001];
+    cin >> n;
+    for(int index = 0; index < n;index++){
+        cin >> arr[index];
+    }
+        int cnt = 0;
+        for(int index = 0;index < n;index++){
+            if(check(arr[index])){
+                cnt++;
+            }
+        }
+
+        cout << cnt << " ";
+        for(int index = 0;index< n;index++){
+            if(check(arr[index])){
+                cout << arr[index] << " ";
+            }
+        }
+    return 0;   
+}
