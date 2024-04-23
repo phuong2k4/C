@@ -5955,5 +5955,5 @@ int main(){
                 cout << arr[index] << " ";
             }
         }
-    return 0;   
+    return 0;
 }
