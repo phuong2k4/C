@@ -5960,22 +5960,23 @@ int main(){
 //     return 0;
 // }
 
-int main(){
-    int n,arr[10001],brr[10001];
-    cin >> n;
-    for(int index = 0; index < n;index++){
-        cin >> arr[index];
-    }
-    for(int index = 0;index<n;index++){
-        if(index==0 && arr[0] * arr[1] <0){
-            cout << arr[index] << endl;
-        }else if(index == n-1 && arr[index - 1] * arr[index-2]<0)
-        {
-            cout <<arr[index];
-        }
-        else if(arr[index] * arr[index-1] < 0 || arr[index] * arr[index+1]<0){
-            cout << arr[index] << endl;
-        }
-    }
-    return 0;
-}
+///liet ke cap so nguoc dau voi nhau
+// int main(){
+//     int n,arr[10001],brr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     for(int index = 0;index<n;index++){
+//         if(index==0 && arr[0] * arr[1] <0){
+//             cout << arr[index] << endl;
+//         }else if(index == n-1 && arr[index - 1] * arr[index-2]<0)
+//         {
+//             cout <<arr[index];
+//         }
+//         else if(arr[index] * arr[index-1] < 0 || arr[index] * arr[index+1]<0){
+//             cout << arr[index] << endl;
+//         }
+//     }
+//     return 0;
+// }
