@@ -5980,3 +5980,28 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+int check(int arr[],int n){
+    int l = 0, r = n- 1;
+    while(l<r){
+        if(arr[l]!=arr[r])return 0;
+        l++;r--;
+    }
+    return 1;
+}
+
+int main(){
+    int n,arr[10001],brr[10001];
+    cin >> n;
+    for(int index = 0; index < n;index++){
+        cin >> arr[index];
+    }
+    if(check(arr,n)){
+        cout << "yes";
+    }else{
+        cout << "no";
+    }
+
+    return 0;
+}
