@@ -5927,33 +5927,37 @@ int main(){
 //     return 0;
 // }
 
-int check(int n){
-    while(n){
-        int r = n % 10;
-        if(r%2==0)return 0;
-        n/=10;
-    }
-    return 1;
-}
 
-int main(){
-    int n,arr[10001];
-    cin >> n;
-    for(int index = 0; index < n;index++){
-        cin >> arr[index];
-    }
-        int cnt = 0;
-        for(int index = 0;index < n;index++){
-            if(check(arr[index])){
-                cnt++;
-            }
-        }
+//so co chu so 1 va 9 
+// int check(int n){
+//     while(n){
+//         int r = n % 10;
+//         if(r%2==0)return 0;
+//         n/=10;
+//     }
+//     return 1;
+// }
 
-        cout << cnt << " ";
-        for(int index = 0;index< n;index++){
-            if(check(arr[index])){
-                cout << arr[index] << " ";
-            }
-        }
-    return 0;
-}
+// int main(){
+//     int n,arr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//         int cnt = 0;
+//         for(int index = 0;index < n;index++){
+//             if(check(arr[index])){
+//                 cnt++;
+//             }
+//         }
+
+//         cout << cnt << " ";
+//         for(int index = 0;index< n;index++){
+//             if(check(arr[index])){
+//                 cout << arr[index] << " ";
+//             }
+//         }
+//     return 0;
+// }
+
+
