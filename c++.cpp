@@ -6031,3 +6031,22 @@ int main(){
 //     return 0;
 // }
 
+////liet ke so lon hon toan bo so dung truoc
+int main(){
+    int n,arr[10001],brr[10001];
+    cin >> n;
+    for(int index = 0; index < n;index++){
+        cin >> arr[index];
+    }
+    for(int index = 0;index < n;index++){
+        int ok = 1;
+        for(int jndex = 0;jndex < index;jndex++){
+            if (arr[jndex] > arr[index])
+            {
+                ok=0;break;
+            }
+        }
+        if(ok) cout << arr[index] << " ";
+    }
+    return 0;
+}
