@@ -6005,3 +6005,29 @@ int main(){
 
 //     return 0;
 // }
+
+
+////kiem tra so tang dan
+// int check(int a[],int n){
+//     for(int i = 0;i<n;i++){
+//         if(a[i] >= a[i+1]){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+
+// int main(){
+//     int n,a[10001];
+//     cin >> n;
+//     for(int i = 0 ;i <n;i++){
+//         cin >> a[i];
+//     }
+//     if(check(a,n)){
+//         cout << "yes";
+//     }else{
+//         cout << "no";
+//     }
+//     return 0;
+// }
+
