@@ -6061,6 +6061,13 @@ int main(){
 // }
 
 /////LineLand
+
+/// solve problem:
+/// la bai toan giai quyet duong di ngan nhat va duong di dai nhat tu cac thanh pho co dia chi
+/// khac nhau
+///... Chi phi nho nhat la diem hien tai toi hai diem truoc va sau, chon ra diem nho nhat
+///... chi phi lon nhat la diem hien tai toi hai diem dau va cuoi, chon ra diem lon nhat
+
 // int min(int a, int b){
 //     return a > b ? b : a;
 // }
@@ -6087,37 +6094,37 @@ int main(){
 // }
 
 ///cinema ticket
-int solution(int a[], int n){
-    int c25 = 0 , c50 = 0;
-    for(int i = 0;i < n;i++){
-        if(a[i] == 25 ) ++c25;
-        else if(a[i] == 50){
-            if(c25 == 0) return 0;
-            --c25;
-            ++c50;
-        }else{
-            if(c25 == 0 || (c25 * 25 + c50 * 50) < 70)return 0;
-            if(c50 != 0){
-                --c25;
-                --c50;
-            }else{
-                c25 -= 3;
-            }
-        }
-    }
-    return 1;
-}
+// int solution(int a[], int n){
+//     int c25 = 0 , c50 = 0;
+//     for(int i = 0;i < n;i++){
+//         if(a[i] == 25 ) ++c25;
+//         else if(a[i] == 50){
+//             if(c25 == 0) return 0;
+//             --c25;
+//             ++c50;
+//         }else{
+//             if(c25 == 0 || (c25 * 25 + c50 * 50) < 70)return 0;
+//             if(c50 != 0){
+//                 --c25;
+//                 --c50;
+//             }else{
+//                 c25 -= 3;
+//             }
+//         }
+//     }
+//     return 1;
+// }
 
-int main(){
-    int n,arr[10001],brr[10001];
-    cin >> n;
-    for(int index = 0; index < n;index++){
-        cin >> arr[index];
-    }
-    if(solution(arr,n)){
-        cout << "Yes" << endl;
-    }
-    else{
-        cout << "No" << endl;
-    }
-}
+// int main(){
+//     int n,arr[10001],brr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     if(solution(arr,n)){
+//         cout << "Yes" << endl;
+//     }
+//     else{
+//         cout << "No" << endl;
+//     }
+// }
