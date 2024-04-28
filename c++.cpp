@@ -6061,27 +6061,29 @@ int main(){
 // }
 
 /////LineLand
-int min(int a, int b){
-    return a > b ? b : a;
-}
-int max(int a,int b){
-    return a > b ? a : b;
-}
+// int min(int a, int b){
+//     return a > b ? b : a;
+// }
+// int max(int a,int b){
+//     return a > b ? a : b;
+// }
 
 
-int main(){
-    int n,arr[10001],brr[10001];
-    cin >> n;
-    for(int index = 0; index < n;index++){
-        cin >> arr[index];
-    }
-    for(int i = 0 ;i<n;i++){
-        if(i == 0){
-            cout << arr[1] - arr[0] << " " << arr[n-1] - arr[0] << endl;
-        }else if(i == n-1){
-            cout << arr[n-1] - arr[n-2] << " " << arr[n-1] - arr[0] << endl;
-        }else{
-            cout << min(arr[i]-arr[i-1], arr[i+1]-arr[i]) << " " << max(arr[i]-arr[0], arr[n-1]-arr[i]) << endl;
-        }
-    }
-}
+// int main(){
+//     int n,arr[10001],brr[10001];
+//     cin >> n;
+//     for(int index = 0; index < n;index++){
+//         cin >> arr[index];
+//     }
+//     for(int i = 0 ;i<n;i++){
+//         if(i == 0){
+//             cout << arr[1] - arr[0] << " " << arr[n-1] - arr[0] << endl;
+//         }else if(i == n-1){
+//             cout << arr[n-1] - arr[n-2] << " " << arr[n-1] - arr[0] << endl;
+//         }else{
+//             cout << min(arr[i]-arr[i-1], arr[i+1]-arr[i]) << " " << max(arr[i]-arr[0], arr[n-1]-arr[i]) << endl;
+//         }
+//     }
+// }
+
+///cinema ticket
