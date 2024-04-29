@@ -6094,21 +6094,22 @@ int main(){
 // }
 
 ///cinema ticket
-// int solution(int a[], int n){
-//     int c25 = 0 , c50 = 0;
-//     for(int i = 0;i < n;i++){
-//         if(a[i] == 25 ) ++c25;
+// int solution(int a[],int n){
+//     int rup25 = 0, rup50 = 0;
+//     for(int i = 0 ;i < n;i++){
+//         if(a[i] == 25) ++rup25;
 //         else if(a[i] == 50){
-//             if(c25 == 0) return 0;
-//             --c25;
-//             ++c50;
+//             if(rup25 == 0)return 0;
+//             --rup25;
+//             ++rup50;
 //         }else{
-//             if(c25 == 0 || (c25 * 25 + c50 * 50) < 70)return 0;
-//             if(c50 != 0){
-//                 --c25;
-//                 --c50;
-//             }else{
-//                 c25 -= 3;
+//             if(rup25==0 or (rup25 * 25 + rup50 +50 ) < 75)return 0;
+//             else{
+//                 if(rup50 != 0 and rup25 != 0){
+//                     --rup50;
+//                     --rup25;
+//                 }
+//                 rup25 -= 3;
 //             }
 //         }
 //     }
