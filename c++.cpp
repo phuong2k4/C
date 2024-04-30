@@ -6157,30 +6157,30 @@ int main(){
 
 //tich lon nhat cua hai so trong mang
 
-int main(){
-    int n, a[10001];
-    cin >> n;
-    for(int i = 0 ;i < n ;i++){
-        cin >> a[i];
-    }
+// int main(){
+//     int n, a[10001];
+//     cin >> n;
+//     for(int i = 0 ;i < n ;i++){
+//         cin >> a[i];
+//     }
 
-    int maxF = INT_MIN, maxS = INT_MIN;
-    int minF = INT_MAX, minS = INT_MAX;
-    for(int i = 0;i < n;i++){
-        if(a[i] > maxF){
-            maxS = maxF;
-            maxF = a[i];
-        }else if(a[i]>maxS){
-            maxS = a[i];
-        }
-        if(a[i] < minF){
-            minS = minF;
-            minF = a[i];
-        }else if(a[i] < minS){
-            minS = a[i];
-        }
-    }
-    long long res = max(1ll * maxF * maxS,1ll * minF * minS);
-    cout << res;
-    return 0;
-}
+//     int maxF = INT_MIN, maxS = INT_MIN;
+//     int minF = INT_MAX, minS = INT_MAX;
+//     for(int i = 0;i < n;i++){
+//         if(a[i] > maxF){
+//             maxS = maxF;
+//             maxF = a[i];
+//         }else if(a[i]>maxS){
+//             maxS = a[i];
+//         }
+//         if(a[i] < minF){
+//             minS = minF;
+//             minF = a[i];
+//         }else if(a[i] < minS){
+//             minS = a[i];
+//         }
+//     }
+//     long long res = max(1ll * maxF * maxS,1ll * minF * minS);
+//     cout << res;
+//     return 0;
+// }
