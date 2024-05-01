@@ -6187,47 +6187,47 @@ int main(){
 
 
 ///cac truong hop khac nhau lien tiep
-int main(){
-    int n;
-    cin >> n;
-    int a[n];
-    for(int i = 0;i < n;i++){
-        cin >> a[i];
-    }
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n];
+//     for(int i = 0;i < n;i++){
+//         cin >> a[i];
+//     }
 
-    int res = 0, cnt = 1;
-    for(int i = 1;i<n;i++){
-        // if(a[i] != a[i-1]) //khac nhau lien tiep
-        // if(a[i] == a[i-1]) //Giong nhau lien tiep
-        // if (a[i] * a[i-1] < 0) //Trai dau lien tiep
-        if (a[i] > a[i-1]) //Theo thu tu tang dan lien tiep
-        {
-            ++cnt;
-        }else{
-            cnt=1;
-        }
-        res = max(cnt, res);
-    }
-    cout << res;
+//     int res = 0, cnt = 1;
+//     for(int i = 1;i<n;i++){
+//         // if(a[i] != a[i-1]) //khac nhau lien tiep
+//         // if(a[i] == a[i-1]) //Giong nhau lien tiep
+//         // if (a[i] * a[i-1] < 0) //Trai dau lien tiep
+//         if (a[i] > a[i-1]) //Theo thu tu tang dan lien tiep
+//         {
+//             ++cnt;
+//         }else{
+//             cnt=1;
+//         }
+//         res = max(cnt, res);
+//     }
+//     cout << res;
 
 
-    int res = 0, cnt = 1, ind;
-    for(int i = 1;i < n;i++){
-        if(a[i] > a[i-1]){
-            ++cnt;
-        }
-        else{
-            cnt=1;
-        }
-        if(cnt >= res){
-            res = cnt;
-            ind = i - res + 1;
-        }
-    }
-    cout << res << endl;
-    for(int i = 0 ;i < res ;i++){
-        cout << a[ind + i] << " " ;
-    }
-    return 0;
+//     int res = 0, cnt = 1, ind;
+//     for(int i = 1;i < n;i++){
+//         if(a[i] > a[i-1]){
+//             ++cnt;
+//         }
+//         else{
+//             cnt=1;
+//         }
+//         if(cnt >= res){
+//             res = cnt;
+//             ind = i - res + 1;
+//         }
+//     }
+//     cout << res << endl;
+//     for(int i = 0 ;i < res ;i++){
+//         cout << a[ind + i] << " " ;
+//     }
+//     return 0;
 
-}
+// }
