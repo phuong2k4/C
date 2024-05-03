@@ -6277,88 +6277,88 @@ int main(){
 // }
 
 /////tan suat cac phan tu trong mang
-int main(){
-    int n;
-    cin >> n;
-    int a[n];
-    for(int i = 0;i < n;i++){
-        cin >> a[i];
-    }
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n];
+//     for(int i = 0;i < n;i++){
+//         cin >> a[i];
+//     }
 
-    ///in ra cac phan tu co trong mang 1 lan
-    int mark[100001] = {0};
-    for(int i = 0;i < n;i++){
-        if(mark[a[i]]==0){
-            cout << a[i] << " ";
-            mark[a[i]]=1;
-        }
-    }
-    ///Giong tren
-    for (int i= 0 ;i < n;i++){
-        int ok = 1;
-        for(int j = 0;j<i;j++){
-            if(a[i] == a[j]){
-                ok = 0; break;
-            }
-        }
-        if(ok)cout << a[i];
-    }
+//     ///in ra cac phan tu co trong mang 1 lan
+//     int mark[100001] = {0};
+//     for(int i = 0;i < n;i++){
+//         if(mark[a[i]]==0){
+//             cout << a[i] << " ";
+//             mark[a[i]]=1;
+//         }
+//     }
+//     ///Giong tren
+//     for (int i= 0 ;i < n;i++){
+//         int ok = 1;
+//         for(int j = 0;j<i;j++){
+//             if(a[i] == a[j]){
+//                 ok = 0; break;
+//             }
+//         }
+//         if(ok)cout << a[i];
+//     }
 
-    ///phan tu co tan suat xuat hien nhieu nhat trong mang
-    int cnt[100001], count = 0, res = 0;
-    for (int i = 0 ;i<n;i++){
-        cnt[a[i]]++;
-    }
-    for(int i = 0;i < n;i++){
-        if(cnt[a[i]] > res ){
-            count = cnt[a[i]];
-            res = a[i];
-        }
-        if(cnt[a[i]] == count){
-            if(res < a[i]){
-                res = a[i];
-            }
-        }
-    }
-    cout << res << " " << count << endl;
+//     ///phan tu co tan suat xuat hien nhieu nhat trong mang
+//     int cnt[100001], count = 0, res = 0;
+//     for (int i = 0 ;i<n;i++){
+//         cnt[a[i]]++;
+//     }
+//     for(int i = 0;i < n;i++){
+//         if(cnt[a[i]] > res ){
+//             count = cnt[a[i]];
+//             res = a[i];
+//         }
+//         if(cnt[a[i]] == count){
+//             if(res < a[i]){
+//                 res = a[i];
+//             }
+//         }
+//     }
+//     cout << res << " " << count << endl;
 
-    //giong tren
-    int count = 0 , res = 0;
-    for(int i = 0;i <n;i++){
-        int cnt = 1;
-        for(int j = i+1;j<n;j++){
-            if(a[i] == a[j]){
-                cnt++;
-            }
-        }
-        if (count < cnt){
-            count = cnt;
-            res = a[i];
-        }
-    }
-    cout << res << " " << count << endl;
+//     //giong tren
+//     int count = 0 , res = 0;
+//     for(int i = 0;i <n;i++){
+//         int cnt = 1;
+//         for(int j = i+1;j<n;j++){
+//             if(a[i] == a[j]){
+//                 cnt++;
+//             }
+//         }
+//         if (count < cnt){
+//             count = cnt;
+//             res = a[i];
+//         }
+//     }
+//     cout << res << " " << count << endl;
 
-    /// tan suat xuat hien cua 1 so trong mang
-    int cnt[10001];
-    for(int i = 0;i<n;i++){
-        cnt[a[i]]++;
-    }
-    for (int i = 0;i < n;i++){
-        if(cnt[a[i]]!=0){
-            cout << a[i] << " "<< cnt[a[i]]<< endl;
-            cnt[a[i]]=0;
-        }
-    }
+//     /// tan suat xuat hien cua 1 so trong mang
+//     int cnt[10001];
+//     for(int i = 0;i<n;i++){
+//         cnt[a[i]]++;
+//     }
+//     for (int i = 0;i < n;i++){
+//         if(cnt[a[i]]!=0){
+//             cout << a[i] << " "<< cnt[a[i]]<< endl;
+//             cnt[a[i]]=0;
+//         }
+//     }
 
-    //so co tan suat xuat hien 1 lan trong mang
-    int cnt[100001], dem =0;
-    for(int i = 0;i < n;i++){
-        cnt[a[i]]++;
-    }
-    for(int i = 0 ;i<n;i++){
-        if(cnt[a[i]]==1){
-            cout << a[i];
-        }
-    }
-    return 0;
-}
+//     //so co tan suat xuat hien 1 lan trong mang
+//     int cnt[100001], dem =0;
+//     for(int i = 0;i < n;i++){
+//         cnt[a[i]]++;
+//     }
+//     for(int i = 0 ;i<n;i++){
+//         if(cnt[a[i]]==1){
+//             cout << a[i];
+//         }
+//     }
+//     return 0;
+// }
