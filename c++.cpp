@@ -6235,43 +6235,43 @@ int main(){
 
 ///Liệt Kê Các Dãy Con Tăng Liên Tiếp Dài Nhất
 
-int main(){
-    int testcase;
-    cin >> testcase;
-    for(int i = 1;i<=testcase;i++){
-        int total_element;
-        cin >> total_element;
-        int array[total_element];
-        for(int index = 0;index < total_element;index++){
-            cin >> array[index];
-        }
-        int count_Element_In_Order = 1, count_Subsequence = 0, array_Store_result[total_element],count = 1;
-        array_Store_result[0]=0;count_Subsequence = 1;
-        for(int index = 1 ;index < total_element;index++){
-            if(array[index] > array[index-1]){
-                ++count;
-            }else{
-                count = 1;
-            }
-            if(count > count_Element_In_Order){
-                count_Element_In_Order = count;
-                array_Store_result[0] = index - count_Element_In_Order + 1;
-                count_Subsequence = 1;
-            }else if(count == count_Element_In_Order){
-                array_Store_result[count_Subsequence] = index - count_Element_In_Order + 1;
-                ++count_Subsequence;
-            }   
-        }
-        cout << "Test Case: " << i << endl;
-        cout << count_Element_In_Order << endl;
-        for(int index = 0 ;index < count_Subsequence;index++){
-            for(int jndex = 0;jndex < count_Element_In_Order;jndex++){
-                printf("%d ",array[array_Store_result[index]+jndex]);
-            }
-            cout << endl;
-        }
+// int main(){
+//     int testcase;
+//     cin >> testcase;
+//     for(int i = 1;i<=testcase;i++){
+//         int total_element;
+//         cin >> total_element;
+//         int array[total_element];
+//         for(int index = 0;index < total_element;index++){
+//             cin >> array[index];
+//         }
+//         int count_Element_In_Order = 1, count_Subsequence = 0, array_Store_result[total_element],count = 1;
+//         array_Store_result[0]=0;count_Subsequence = 1;
+//         for(int index = 1 ;index < total_element;index++){
+//             if(array[index] > array[index-1]){
+//                 ++count;
+//             }else{
+//                 count = 1;
+//             }
+//             if(count > count_Element_In_Order){
+//                 count_Element_In_Order = count;
+//                 array_Store_result[0] = index - count_Element_In_Order + 1;
+//                 count_Subsequence = 1;
+//             }else if(count == count_Element_In_Order){
+//                 array_Store_result[count_Subsequence] = index - count_Element_In_Order + 1;
+//                 ++count_Subsequence;
+//             }   
+//         }
+//         cout << "Test Case: " << i << endl;
+//         cout << count_Element_In_Order << endl;
+//         for(int index = 0 ;index < count_Subsequence;index++){
+//             for(int jndex = 0;jndex < count_Element_In_Order;jndex++){
+//                 printf("%d ",array[array_Store_result[index]+jndex]);
+//             }
+//             cout << endl;
+//         }
 
-    }
-return 0;    
+//     }
+// return 0;    
 
-}
+// }
