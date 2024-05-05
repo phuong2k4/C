@@ -6364,6 +6364,46 @@ int main(){
 // }
 
 ////tong tien to, mang cong don
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n];
+//     for(int i = 0;i < n;i++){
+//         cin >> a[i];
+//     }
+//     // int q;
+//     // cin >> q;
+//     // while(q--){
+//     //     int l,r,sum = 0;
+//     //     cin >> l >> r;
+//     //     for(int i = l-1 ;i<=r-1;i++){
+//     //         sum += a[i];
+//     //     }
+//     //     cout << sum << endl;
+//     // }
+    
+//     long long prefix[n];
+//     for(int i = 0 ;i<n;i++){
+//         if(i == 0) prefix[0] = a[0];
+//         else{
+//             prefix[i] = prefix[i-1] + a[i];
+//         }
+//     }
+//     int query;
+//     cin >> query;
+//     while(query--){
+//         int l,r;
+//         cin >> l >> r;
+//         --l;--r;
+//         if(l==0)cout << prefix[r] << endl;
+//         else
+//             cout << prefix[r] - prefix[l-1] << endl;
+//     }
+//     return 0;
+// }
+
+////Thuat toan Kadane // Day con lien tiep co tong lon nhat
+
 int main(){
     int n;
     cin >> n;
@@ -6371,35 +6411,12 @@ int main(){
     for(int i = 0;i < n;i++){
         cin >> a[i];
     }
-    // int q;
-    // cin >> q;
-    // while(q--){
-    //     int l,r,sum = 0;
-    //     cin >> l >> r;
-    //     for(int i = l-1 ;i<=r-1;i++){
-    //         sum += a[i];
-    //     }
-    //     cout << sum << endl;
-    // }
-    
-    long long prefix[n];
-    for(int i = 0 ;i<n;i++){
-        if(i == 0) prefix[0] = a[0];
-        else{
-            prefix[i] = prefix[i-1] + a[i];
-        }
+    int sum1 = 0,sum2 = 0;
+    for(int i = 0;i<n;i++){
+        sum1 += a[i];
+        sum2 = max(sum1, sum2);
+        if(sum1 < 0) sum1 = 0;
     }
-    int query;
-    cin >> query;
-    while(query--){
-        int l,r;
-        cin >> l >> r;
-        --l;--r;
-        if(l==0)cout << prefix[r] << endl;
-        else
-            cout << prefix[r] - prefix[l-1] << endl;
-    }
-    return 0;
+    cout << sum2 << endl;
+    return 0; 
 }
-
-
