@@ -6470,3 +6470,27 @@ int main(){
 // }
 
 
+//Phan tu duoc lap lai lan dau tien trong mang
+
+int cnt[100001] = {0};
+// memset(cnt, 0, sizeof(int));
+
+int main(){
+    int n, k;
+    cin >> n >> k;
+    int a[n];
+    for(int i = 0;i < n;i++){
+        cin >> a[i];
+    }
+    int ok = 0;
+    for(int i = 0 ;i<n;i++){
+        if(cnt[a[i]]==1){
+            cout << a[i];
+            ok = 1;
+            break;
+        }
+        cnt[a[i]]=1;
+    }
+    if(!ok) cout << "-1";
+return 0;
+}
