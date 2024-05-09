@@ -6496,3 +6496,67 @@ int main(){
 // }
 
 
+//// tron 2 mang da duoc sap xep thanh 1 mang duy nhat va duoc sap xep
+
+ void sort(int a[],int n){
+    for(int i = 0;i<n;i++){
+        for(int j = i+1;j<n;j++){
+            if(a[i]>a[j]){
+                int temp = a[i];
+                a[i]= a[j];
+                a[j]= temp;
+            }
+        }
+    }
+ }
+int main(){
+    ////mind
+    // int n,m;
+    // cin >> n >> m;
+    // int a[n],b[m];
+    // for(int i = 0;i<n;i++){
+    //     cin >> a[i];
+    // }
+    // for(int i = 0 ;i<m;i++){
+    //     cin >> b[i];
+    // }
+    // int c[n+m];
+    // for(int i = 0;i<n;i++){
+    //     c[i] = a[i];
+    // }
+    // for(int i = 0;i<m;i++){
+    //     c[i+n]=b[i];
+    // }
+    // sort(c,n+m);
+    // for(int i = 0 ;i<n+m;i++){
+    //     cout << c[i] << " ";
+    // }
+
+    ///tech
+    int n,m;
+    cin >> n >> m;
+    int a[n],b[m];
+    for (int i = 0;i<n;i++) cin >> a[i];
+    for(int i= 0 ;i<m;i++) cin >> b[i];
+    int i = 0, j=0,cnt = 0,c[n+m];
+    while(i<n && j<m){
+        if (a[i]<b[j]){
+            c[cnt++]=a[i];  
+            ++i;
+        }
+        else{
+            c[cnt++]=b[j];
+            ++j;
+        }
+    }
+    while(i<n){
+        c[cnt++] = a[i++];
+    }
+    while(j<m){
+        c[cnt++] = b[j++];
+    }
+    for(int i = 0;i<n+m;i++){
+        cout << c[i] << " ";
+    }
+return 0;
+}
