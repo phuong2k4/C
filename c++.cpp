@@ -6603,3 +6603,32 @@ int main(){
     }
     return 0;
 }
+
+//// giao va hop cua 2 mang chua sap xep
+
+int cnt[100001] = {0};
+int main(){
+    int n, m;
+    cin >> n >> m;
+    int a[n], b[m];
+    int min_val= 1e9, max_val = -1e9;
+    for(int i = 0;i<n;i++){
+        cin >> a[i];
+        cnt[a[i]]++;
+        min_val = min(min_val,a[i]);
+        max_val = max(max_val,a[i]);
+    }
+    for(int i = 0;i<m;i++){
+        cin >> b[i];
+        cnt[b[i]]++;
+        min_val = min(min_val,b[i]);
+        max_val = max(max_val,b[i]);
+    }
+    for(int i = min_val; i<= max_val;i++){
+        if(cnt[i]) cout << i << " ";
+    }
+    cout << endl;
+    for(int i = min_val; i <= max_val;i++){
+        if(cnt[i]==2) cout << i << " ";
+    }
+}
