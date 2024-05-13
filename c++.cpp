@@ -6635,44 +6635,46 @@ int main(){
 
 
 ///sap xep mang tinh chat chan le
-void selectionSort(int a[], int n){
-    for(int i = 0;i<n;i++){
-        int minElement = i;
-        for(int j = i+1;j<n;j++){
-            if(a[j]<a[minElement]) minElement = j;
-        }
-        int flag = a[minElement];
-        a[minElement] = a[i];
-        a[i] = flag;
-    }
-}
+// void selectionSort(int a[], int n){
+//     for(int i = 0;i<n;i++){
+//         int minElement = i;
+//         for(int j = i+1;j<n;j++){
+//             if(a[j]<a[minElement]) minElement = j;
+//         }
+//         int flag = a[minElement];
+//         a[minElement] = a[i];
+//         a[i] = flag;
+//     }
+// }
 
-int cmp(const void *a, const void *b){
-    return *(int* )a - *(int* )b;
-}
+// int cmp(const void *a, const void *b){
+//     return *(int* )a - *(int* )b;
+// }
 
-int main(){
-    int n;
-    cin >> n;
-    int chan[n], le[n];
-    int c = 0, l =0;
-    for( int i = 0 ;i< n;i++){
-        int x;
-        cin >> x;
-        if(x%2==0){
-            chan[c++] = x;  
-        } 
-        else {
-            le[l++] = x;
-        }
-    }
-    selectionSort(chan, c);
-    selectionSort(le,l);
-    qsort(chan,c,sizeof(int),cmp);
-    qsort(le ,l,sizeof(int),cmp);
+// int main(){
+//     int n;
+//     cin >> n;
+//     int chan[n], le[n];
+//     int c = 0, l =0;
+//     for( int i = 0 ;i< n;i++){
+//         int x;
+//         cin >> x;
+//         if(x%2==0){
+//             chan[c++] = x;  
+//         } 
+//         else {
+//             le[l++] = x;
+//         }
+//     }
+//     selectionSort(chan, c);
+//     selectionSort(le,l);
+//     qsort(chan,c,sizeof(int),cmp);
+//     qsort(le ,l,sizeof(int),cmp);
 
-    for(int i = 0;i<c;i++) cout << chan[i] << " ";
-    cout << endl;
-    for(int i = 0;i<l;i++) cout << le[i] <<" ";
-    return 0;
-}
+//     for(int i = 0;i<c;i++) cout << chan[i] << " ";
+//     cout << endl;
+//     for(int i = 0;i<l;i++) cout << le[i] <<" ";
+//     return 0;
+// }
+
+
