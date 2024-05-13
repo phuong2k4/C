@@ -6681,6 +6681,38 @@ int main(){
 /// so xuat hien nhieu nhat trong mang
 
 
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n],b[n];
+//     for(int i = 0;i<n;i++){
+//         cin >> a[i];
+//     }
+//     int res = 0;
+//     for(int i = 0 ;i<n;i++){
+//         if(cnt[a[i]] > res){
+//             res = cnt[a[i]];
+//         }
+//     }
+//     for(int i = 0;i < n; i++){
+//         if(res == cnt[a[i]]){
+//             cout << a[i];
+//             cnt[a[i]] = 0;
+//         }
+//     }
+//     return 0;
+// }
+
+
+////tron hai day tang giam
+
+int cmpBtS(const void *a,const void *b){
+    return *(int*)a - *(int*)b;
+}
+int cmpStB(const void *a,const void *b){
+    return *(int*)b - *(int*)a;
+}
+
 int main(){
     int n;
     cin >> n;
@@ -6688,18 +6720,15 @@ int main(){
     for(int i = 0;i<n;i++){
         cin >> a[i];
     }
-    int res = 0;
-    for(int i = 0 ;i<n;i++){
-        if(cnt[a[i]] > res){
-            res = cnt[a[i]];
-        }
+
+    for(int i = 0;i<n;i++){
+        cin >> b[i];
     }
-    for(int i = 0;i < n; i++){
-        if(res == cnt[a[i]]){
-            cout << a[i];
-            cnt[a[i]] = 0;
-        }
+    int arr[n*2];
+    qsort(a,n,sizeof(int),cmpBtS);
+    qsort(b,n,sizeof(int),cmpStB);
+    for(int i = 0;i<n;i++){
+        cout << a[i] << " " << b[i] << " ";
     }
     return 0;
 }
-
