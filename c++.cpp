@@ -6678,3 +6678,28 @@ int main(){
 // }
 
 
+/// so xuat hien nhieu nhat trong mang
+
+
+int main(){
+    int n;
+    cin >> n;
+    int a[n],b[n];
+    for(int i = 0;i<n;i++){
+        cin >> a[i];
+    }
+    int res = 0;
+    for(int i = 0 ;i<n;i++){
+        if(cnt[a[i]] > res){
+            res = cnt[a[i]];
+        }
+    }
+    for(int i = 0;i < n; i++){
+        if(res == cnt[a[i]]){
+            cout << a[i];
+            cnt[a[i]] = 0;
+        }
+    }
+    return 0;
+}
+
