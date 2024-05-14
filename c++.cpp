@@ -6706,29 +6706,31 @@ int main(){
 
 ////tron hai day tang giam
 
-int cmpBtS(const void *a,const void *b){
-    return *(int*)a - *(int*)b;
-}
-int cmpStB(const void *a,const void *b){
-    return *(int*)b - *(int*)a;
-}
+// int cmpBtS(const void *a,const void *b){
+//     return *(int*)a - *(int*)b;
+// }
+// int cmpStB(const void *a,const void *b){
+//     return *(int*)b - *(int*)a;
+// }
 
-int main(){
-    int n;
-    cin >> n;
-    int a[n],b[n];
-    for(int i = 0;i<n;i++){
-        cin >> a[i];
-    }
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n],b[n];
+//     for(int i = 0;i<n;i++){
+//         cin >> a[i];
+//     }
 
-    for(int i = 0;i<n;i++){
-        cin >> b[i];
-    }
-    int arr[n*2];
-    qsort(a,n,sizeof(int),cmpBtS);
-    qsort(b,n,sizeof(int),cmpStB);
-    for(int i = 0;i<n;i++){
-        cout << a[i] << " " << b[i] << " ";
-    }
-    return 0;
-}
+//     for(int i = 0;i<n;i++){
+//         cin >> b[i];
+//     }
+//     int arr[n*2];
+//     qsort(a,n,sizeof(int),cmpBtS);
+//     qsort(b,n,sizeof(int),cmpStB);
+//     for(int i = 0;i<n;i++){
+//         cout << a[i] << " " << b[i] << " ";
+//     }
+//     return 0;
+// }
+
+
