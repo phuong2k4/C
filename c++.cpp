@@ -6753,4 +6753,27 @@ int main(){
 // }
 
 
-//
+////day uu the
+int main(){
+    int t;
+    cin >> t;
+    for(int i = 0 ;i<t;i++){
+        int n = 0;
+        int c=0,l=0;
+        char c = ' ';
+        while(c==' '){
+            int x;
+            cin >> x;
+            ++n;
+            if(x%2==0) ++c;
+            else ++l;
+            c = getchar();
+        }
+        if(n % 2 == 0 && c > l || n%2==1 && c < l){
+            cout << "Yes";
+        }else{
+            cout << "No";
+        }
+    }
+    return 0;
+}
