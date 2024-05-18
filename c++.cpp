@@ -6777,3 +6777,54 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+///liet ke cac so khong giam va khong cho biet so luong phan tu
+struct Data{
+    int num;
+    int time;
+};
+
+//check mot so khong giam 
+int check(int n){
+    while(n >= 10){
+        int r = n % 10;
+        if(r < (n/10)%10){
+            return 0;
+        }
+        n/=10;
+    }
+    return 1;   
+}
+
+// tim va luu gia tri theo tan xuat
+int find(Data a[] , int n, int x){
+    for(int i = 0 ;i<n;i++){
+        if(a[i].num == x){
+            return i;
+        }
+    }
+    return -1; 
+}
+
+int main(){
+    Data Number[1000001];
+    int n = 0;
+    int x;
+    while((scanf("%d", &x))!=-1){
+        if(check(x)){
+            int ind = find(Number,n,x);
+            if(ind != -1){
+                Number[ind].time +=1;
+            }else{
+                Number[n].num = x;
+                Number[n].time = 1;
+                ++n;
+            }
+        }
+    }
+    for(int i = 0;i<n;i++){
+        cout << Number[i].num << " " << Number[i].time << endl;
+    }
+    return 0;
+}
