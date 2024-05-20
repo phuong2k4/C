@@ -6832,28 +6832,55 @@ int main(){
 
 //a^2 + b^2 = c^2 
 //tim ra 3 so tao nen 3 canh cua tam giac vuong
-void SelectionSort(int a[],int n){
-    for(int i = 0 ;i<n;i++){
-        int min = i;
-        for(int j  = i+1;j<n;j++){
-            if(a[j] < a[min]) min = j;
-        }
-        int flag = a[i];
-        a[i] = a[min];
-        a[min] = flag;
-    }
-}
+// void SelectionSort(int a[],int n){
+//     for(int i = 0 ;i<n;i++){
+//         int min = i;
+//         for(int j  = i+1;j<n;j++){
+//             if(a[j] < a[min]) min = j;
+//         }
+//         int flag = a[i];
+//         a[i] = a[min];
+//         a[min] = flag;
+//     }
+// }
 
-int check(int a[],int n){
-    for(int i = n-1;i>2;i++){
-        int l = 0, r =n-1;
-        while(l<r) {
-            if(a[l] + a[r] == a[i])return 1;
-            else if(a[l] + a[r] < a[i]) ++l;
-            else --r;
-        }
-    }
-    return 0;
+// int check(int a[],int n){
+//     for(int i = n-1;i>2;i++){
+//         int l = 0, r =n-1;
+//         while(l<r) {
+//             if(a[l] + a[r] == a[i])return 1;
+//             else if(a[l] + a[r] < a[i]) ++l;
+//             else --r;
+//         }
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int i = 0;i<n;i++){
+//             int x;
+//             cin >> x;
+//             a[i] = 1ll * x * x;
+//         }
+//         SelectionSort(a,n);
+//         if(check(a,n)){
+//             cout << "Yes" << endl;
+//         }else cout << "No" << endl;
+//     }
+//     return 0;
+// }
+
+//2 diem trong thanh pho gan nhau nhat
+//Xay dung tuyen bus Brt
+
+int cmpBtS(const void *a,const void *b){
+    return *(int*)a - *(int*)b;
 }
 
 int main(){
@@ -6861,17 +6888,22 @@ int main(){
     cin >> t;
     while(t--){
         int n;
-        cin >> n;
+        cin >>n;
         int a[n];
-        for(int i = 0;i<n;i++){
-            int x;
-            cin >> x;
-            a[i] = 1ll * x * x;
+        for(int i =0 ;i<n;i++){
+            cin >> a[i];
         }
-        SelectionSort(a,n);
-        if(check(a,n)){
-            cout << "Yes" << endl;
-        }else cout << "No" << endl;
+        int cnt = 0, res = 1e9;
+        qsort(a,n,sizeof(int),cmpBtS);
+        for(int i = 1;i<n;i++){
+            if(a[i] - a[i-1] < res){
+                res = a[i] - a[i-1];
+                cnt=1;
+            }else if(a[i] - a[i-1] == res){
+                cnt++;
+            }
+        }
+        cout << res << " " << cnt << endl;
     }
     return 0;
 }
