@@ -6909,3 +6909,34 @@ int main(){
 // }
 
  
+//ham qsort be den lon
+int cmpBtS(const void *a,const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(*x < *y) return -1;
+    return 1;
+}
+
+//ham qsort lon den be
+int cmpStB(const void *a,const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(*x < *y) return 1;
+    return -1;
+}
+
+
+int main(){
+    int n;
+    cin >> n;
+    int a[n];
+    for(int i = 0 ;i<n;i++){
+        cin >> a[i];
+    }
+    qsort(a,n,sizeof(int),cmpBtS);
+    qsort(a,n,sizeof(int),cmpStB);
+    for(int i = 0;i<n;i++){
+        cout << a[i] << " ";
+    }
+    return 0;
+}
