@@ -6879,33 +6879,33 @@ int main(){
 //2 diem trong thanh pho gan nhau nhat
 //Xay dung tuyen bus Brt
 
-int cmpBtS(const void *a,const void *b){
-    return *(int*)a - *(int*)b;
-}
+// int cmpBtS(const void *a,const void *b){
+//     return *(int*)a - *(int*)b;
+// }
 
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >>n;
-        int a[n];
-        for(int i =0 ;i<n;i++){
-            cin >> a[i];
-        }
-        int cnt = 0, res = 1e9;
-        qsort(a,n,sizeof(int),cmpBtS);
-        for(int i = 1;i<n;i++){
-            if(a[i] - a[i-1] < res){
-                res = a[i] - a[i-1];
-                cnt=1;
-            }else if(a[i] - a[i-1] == res){
-                cnt++;
-            }
-        }
-        cout << res << " " << cnt << endl;
-    }
-    return 0;
-}
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >>n;
+//         int a[n];
+//         for(int i =0 ;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int cnt = 0, res = 1e9;
+//         qsort(a,n,sizeof(int),cmpBtS);
+//         for(int i = 1;i<n;i++){
+//             if(a[i] - a[i-1] < res){
+//                 res = a[i] - a[i-1];
+//                 cnt=1;
+//             }else if(a[i] - a[i-1] == res){
+//                 cnt++;
+//             }
+//         }
+//         cout << res << " " << cnt << endl;
+//     }
+//     return 0;
+// }
 
-//test 
+ 
