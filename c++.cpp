@@ -6908,7 +6908,8 @@ int main(){
 //     return 0;
 // }
 
- 
+
+////hint: neu muon a dung truoc b trong day da sap xep thi tra ve -1 con khong tra ve 1 
 //ham qsort be den lon
 int cmpBtS(const void *a,const void *b){
     int *x = (int*)a;
@@ -6925,18 +6926,69 @@ int cmpStB(const void *a,const void *b){
     return -1;
 }
 
+//ham qsort tri tuyet doi
+int cmpAbs(const void *a, const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(abs(*x) > abs(*y)) return 1;
+    return -1;
+}
+
+//ham qsort tri tuyet doi (gt nho dung truoc)
+int cmpAbs_if_same_value(const void *a, const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(abs(*x) != abs(*y)) return abs(*x) - abs(*y);
+    if(*x < 0) return -1;
+    return 1;
+}
+
+int sumDigit(int n){
+    int res = 0;
+    while (n){
+        res += n%10 * 10;
+        n/=10; 
+    }
+    return res;
+}
+
+// ham qsort tong chu so cua 1 so
+int cmp_sum_biggest(const void *a, const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(sumDigit(*x) != sumDigit(*y)) return sumDigit(*x) - sumDigit(*y);
+    return *x-*y;
+}
+
+// ham qsort chan truoc (giam) le sau (tang)
+int cmpOddGEvenT(const void *a, const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(*x % 2 == 0)return -1;
+    else if(*x % 2 == 1)return 1;
+    return *x-*y;
+}
+
+// ham qsort chan sau (tang) le truoc (giam)
+int cmpOddTEvenG(const void *a,const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    if(*x%2==0 && *y%2!=0) return -1;
+    if(*x%2==1 && *y%2==0) return 1;
+    if(*x%2==0 && *y%2==0) return *y-*x;
+    return *x-*y;
+}
 
 int main(){
     int n;
     cin >> n;
     int a[n];
     for(int i = 0 ;i<n;i++){
-        cin >> a[i];
+        cin >>a[i];
     }
-    qsort(a,n,sizeof(int),cmpBtS);
-    qsort(a,n,sizeof(int),cmpStB);
+    qsort(a,n,sizeof(int),/*function*/);
     for(int i = 0;i<n;i++){
-        cout << a[i] << " ";
+        cout << a[i] << " " ;
     }
     return 0;
 }
