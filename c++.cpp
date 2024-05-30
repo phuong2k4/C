@@ -6995,32 +6995,34 @@ int main(){
 
 
 /// ma tran / mang 2 chieu
-int main(){
-    int n , m;
-    cin >> n >> m;
-    int a[n][m];
-    for(int i = 0 ;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> a[i][j];
-        }
-    }
+// int main(){
+//     int n , m;
+//     cin >> n >> m;
+//     int a[n][m];
+//     for(int i = 0 ;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
 
-// tong chu so cua hang
-    for(int i = 0 ;i<n;i++){
-        int sum = 0;
-        for(int j = 0 ;j<m;j++){
-            sum += a[i][j];
-        }   
-        cout << sum << endl;
-    }
+// // tong chu so cua hang
+//     for(int i = 0 ;i<n;i++){
+//         int sum = 0;
+//         for(int j = 0 ;j<m;j++){
+//             sum += a[i][j];
+//         }   
+//         cout << sum << endl;
+//     }
 
-// tong chu so cua cot 
-    for(int i = 0 ;i<n;i++){
-        int sum = 0;
-        for(int j = 0 ;j<m;j++){
-            sum += a[j][i];
-        }   
-        cout << sum << endl;
-    }
-    return 0;
-}
+// // tong chu so cua cot 
+//     for(int i = 0 ;i<n;i++){
+//         int sum = 0;
+//         for(int j = 0 ;j<m;j++){
+//             sum += a[j][i];
+//         }   
+//         cout << sum << endl;
+//     }
+//     return 0;
+// }
+
+
