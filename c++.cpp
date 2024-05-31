@@ -7025,68 +7025,71 @@ int main(){
 //     return 0;
 // }
 
-int check(int a){
-    for(int i = 2;i<sqrt(a);i++){
-        if( a%2==0){
-            return 0;
-        }
-    }
-    return a>1;
-}
+// int check(int a){
+//     for(int i = 2;i<sqrt(a);i++){
+//         if( a%2==0){
+//             return 0;
+//         }
+//     }
+//     return a>1;
+// }
 
 
-//tim hang & cot co so nguyen to nhieu nhat
-int main(){
-    int n,m;
-    cin >> n >> m;
-    int a[n][m];
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> a[i][j];
-        }
-    }
+// //tim hang & cot co so nguyen to nhieu nhat
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m];
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
 
 
-    //Hang
-    int res = 0, indRows;
-    for(int i = 0 ;i<n;i++){
-        int cnt = 0;
-        for(int j = 0;j<m;j++){
-            if(check(a[i][j])){
-                ++cnt;
-            }
-        }
-        if(cnt >= res){
-            res = cnt;
-            indRows = i;
-        }
-    }
-    cout << indRows + 1 <<endl;
-    for(int i =0 ;i<n;i++){
-        if(check(a[indRows][i])){
-            cout << a[indRows][i] << endl;
-        }
-    }
+//     //Hang
+//     int res = 0, indRows;
+//     for(int i = 0 ;i<n;i++){
+//         int cnt = 0;
+//         for(int j = 0;j<m;j++){
+//             if(check(a[i][j])){
+//                 ++cnt;
+//             }
+//         }
+//         if(cnt >= res){
+//             res = cnt;
+//             indRows = i;
+//         }
+//     }
+//     cout << indRows + 1 <<endl;
+//     for(int i =0 ;i<n;i++){
+//         if(check(a[indRows][i])){
+//             cout << a[indRows][i] << endl;
+//         }
+//     }
 
-    //Cot
-    int res = 0, indColumn;
-    for(int i = 0;i<n;i++){
-        int cnt = 0;
-        for(int j = 0 ;j<m;j++){
-            if(check(a[j][i])){
-                cnt++;
-            }
-        }
-        if(cnt > res ){
-            res = cnt;
-            indColumn = i;
-        }
-    }
-    cout << indColumn + 1 << endl;
-    for(int i = 0 ;i< n;i++){
-        if(check(a[i][indColumn])){
-            cout << a[i][indColumn] << " ";
-        }
-    }
-    return 0;
-}
+//     //Cot
+//     int res = 0, indColumn;
+//     for(int i = 0;i<n;i++){
+//         int cnt = 0;
+//         for(int j = 0 ;j<m;j++){
+//             if(check(a[j][i])){
+//                 cnt++;
+//             }
+//         }
+//         if(cnt > res ){
+//             res = cnt;
+//             indColumn = i;
+//         }
+//     }
+//     cout << indColumn + 1 << endl;
+//     for(int i = 0 ;i< n;i++){
+//         if(check(a[i][indColumn])){
+//             cout << a[i][indColumn] << " ";
+//         }
+//     }
+//     return 0;
+// }
+
+
+
