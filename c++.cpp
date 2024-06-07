@@ -7146,7 +7146,6 @@ int main(){
 // }
 
 //hoan doi vi tri hang va cot
-///hang
 int main(){
     int n,m;
     cin >> n >> m;
@@ -7158,11 +7157,19 @@ int main(){
     }
     int x,y;
     cin >> x >> y;
+    //hang
     for(int i =0 ;i<m;i++){
-        int temp = a[x-1][i];
+        int flag = a[x-1][i];
         a[x-1][i] = a[y-1][i];
-        a[y-1][i] = temp;
+        a[y-1][i] = flag;
     }
+    //cot
+        for(int i = 0;i<n;i++){
+        int flag = a[i][x-1];
+        a[i][x-1] = a[i][y-1];
+        a[i][y-1] = flag;
+    }
+	
     for(int i = 0;i<n;i++){
         for(int j=0;j<m;j++){
             cout << a[i][j]<< " ";
