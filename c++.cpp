@@ -7095,52 +7095,79 @@ int main(){
 
 //Loai Bo hang va cot co tong lon nhat 
 
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n,m;
+//         cin >> n >> m;
+//         int a[n][m];
+//         for(int i = 0;i<n;i++){
+//             for(int j = 0;j<m;j++){
+//                 cin >> a[i][j];
+//             }
+//         }
+
+//         int flag = -1e9, row , col;
+//         for(int i = 0 ;i<n;i++){
+//             int sum = 0;
+//             for(int j = 0;j<m;j++){
+//                 sum += a[i][j];
+//             }
+//             if(sum > flag){
+//                 flag = sum;
+//                 row = i;
+//             }
+//         }
+//         flag = -1e9;
+//         for(int i = 0;i<m;i++){
+//             int sum = 0;
+//             for(int j = 0;j<n;j++){
+//                 sum += a[j][i];
+//             }
+//             if(sum > flag){
+//                 flag = sum;
+//                 col = i;
+//             }
+//         }
+
+//         for(int i = 0 ;i<n;i++){
+//             if(row != i){
+//                 for(int j = 0;j<m;j++){
+//                     if(col != j){
+//                         cout << a[i][j] << " ";
+//                     }
+//                 }
+//                 cout << endl;
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+//hoan doi vi tri hang va cot
+///hang
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n,m;
-        cin >> n >> m;
-        int a[n][m];
-        for(int i = 0;i<n;i++){
-            for(int j = 0;j<m;j++){
-                cin >> a[i][j];
-            }
+    int n,m;
+    cin >> n >> m;
+    int a[n][m];
+    for(int i = 0 ;i<n;i++){
+        for(int j = 0;j<m;j++){
+            cin >> a[i][j];
         }
-
-        int flag = -1e9, row , col;
-        for(int i = 0 ;i<n;i++){
-            int sum = 0;
-            for(int j = 0;j<m;j++){
-                sum += a[i][j];
-            }
-            if(sum > flag){
-                flag = sum;
-                row = i;
-            }
+    }
+    int x,y;
+    cin >> x >> y;
+    for(int i =0 ;i<m;i++){
+        int temp = a[x-1][i];
+        a[x-1][i] = a[y-1][i];
+        a[y-1][i] = temp;
+    }
+    for(int i = 0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout << a[i][j]<< " ";
         }
-        flag = -1e9;
-        for(int i = 0;i<m;i++){
-            int sum = 0;
-            for(int j = 0;j<n;j++){
-                sum += a[j][i];
-            }
-            if(sum > flag){
-                flag = sum;
-                col = i;
-            }
-        }
-
-        for(int i = 0 ;i<n;i++){
-            if(row != i){
-                for(int j = 0;j<m;j++){
-                    if(col != j){
-                        cout << a[i][j] << " ";
-                    }
-                }
-                cout << endl;
-            }
-        }
+        cout << endl;
     }
     return 0;
 }
