@@ -7169,6 +7169,12 @@ int main(){
         a[i][x-1] = a[i][y-1];
         a[i][y-1] = flag;
     }
+    //Duong cheo
+    for(int i = 0;i<n;i++){
+        int flag = a[i][i];
+        a[i][i] = a[i][n-i-1];
+        a[i][n-i-1] =flag;
+    }
 	
     for(int i = 0;i<n;i++){
         for(int j=0;j<m;j++){
