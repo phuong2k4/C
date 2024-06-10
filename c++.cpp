@@ -7145,3 +7145,107 @@ int main(){
 //     return 0;
 // }
 
+//hoan doi vi tri hang va cot
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m];
+//     for(int i = 0 ;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+//     int x,y;
+//     cin >> x >> y;
+//     //hang
+//     for(int i =0 ;i<m;i++){
+//         int flag = a[x-1][i];
+//         a[x-1][i] = a[y-1][i];
+//         a[y-1][i] = flag;
+//     }
+//     //cot
+//         for(int i = 0;i<n;i++){
+//         int flag = a[i][x-1];
+//         a[i][x-1] = a[i][y-1];
+//         a[i][y-1] = flag;
+//     }
+//     //Duong cheo
+//     for(int i = 0;i<n;i++){
+//         int flag = a[i][i];
+//         a[i][i] = a[i][n-i-1];
+//         a[i][n-i-1] =flag;
+//     }
+	
+//     for(int i = 0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             cout << a[i][j]<< " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/////check so nguyen to duong cheo chinh va duong cheo phu
+//check
+// int check(int n){
+//     for(int i =2;i<=sqrt(n);i++){
+//         if(n%i==0)return 0;
+//     }
+//     return n>1;
+// }
+
+// //sàng
+// int p[10001];
+// void prime(){
+//     for(int i = 0 ;i<10000;i++){
+//         p[i]=1;
+//     }
+//     p[0]=p[1]=0;
+//     for(int i =0;i<=100;i++){
+//         if(p[i]){
+//             for(int j = i*i;j<=10000;j+=i){
+//                 p[j]=0;
+//             }
+//         }
+//     }
+// }
+
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n][n];
+//     for(int i = 0;i<n;i++){
+//         for(int j =0;j<n;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+//     //check so lap
+//     int cnt=0;
+//     for(int i = 0;i<n;i++){
+//         if(check(a[i][i])){
+//             ++cnt;
+//         }
+//         if(check(a[i][n-i-1])){
+//             ++cnt;
+//         }
+//     }
+//     if(check(a[n/2][n/2])) --cnt;
+//     cout << cnt<< " ";
+
+//     //check khong bi lap so
+//     prime();
+//     int count = 0;
+//     for(int i = 0;i<n;i++){
+//         if(p[a[i][i]]){
+//             ++count;
+//             p[a[i][i]]=0;
+//         }
+//         if(p[a[i][n-i-1]]){
+//             ++count;
+//             p[a[i][n-i-1]]=0;
+//         }
+//     }
+//     cout << count;
+//     return 0;
+// }
