@@ -7253,44 +7253,86 @@ int main(){
 
 //in mang 2 chieu theo nhieu cach khac nhau
 
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n][n];
+//     for(int i = 0;i<n;i++){
+//         for(int j =0;j<n;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+//     cout << endl;
+//     //ma tran chuyen vi 1
+//     for(int i = 0;i<n;i++){
+//         for(int j= 0;j<n;j++){
+//             cout << a[j][i] << " ";
+//         }
+//     cout << endl;
+//     }
+//     cout << endl;
+//     //ma tran chuyen vi 2
+//     for(int i = n-1;i>=0;i--){
+//         for(int j = n-1;j>=0;j--){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     //ma tran chuyen vi 3
+//     for(int i = n-1;i>=0;i--){
+//         for(int j = n-1;j>=0;j--){
+//             cout << a[j][i] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     //ma tran chuyen vi 4
+//     for(int i = n-1;i>=0;i--){
+//         for(int j = 0;j<n;j++){
+//             cout << a[j][i] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+///tong va hieu cua 2 ma tran cung cap
 int main(){
-    int n;
-    cin >> n;
-    int a[n][n];
-    for(int i = 0;i<n;i++){
-        for(int j =0;j<n;j++){
+    int n,m;
+    cin >> n >> m;
+    int a[n][m], b[n][m];
+    for(int i = 0 ;i<n;i++){
+        for (int j = 0; j < m; j++)
+        {
             cin >> a[i][j];
         }
     }
-    cout << endl;
-    //ma tran chuyen vi 1
+    for(int i = 0 ;i<n;i++){
+        for (int j = 0; j < m; j++)
+        {
+            cin >> b[i][j];
+        }
+    }
+
+    int sum[n][m], minus[n][m];
     for(int i = 0;i<n;i++){
-        for(int j= 0;j<n;j++){
-            cout << a[j][i] << " ";
+        for(int j =0 ;j<m;j++){
+            sum[i][j] = a[i][j]+b[i][j];
+            minus[i][j] = a[i][j]-b[i][j];
         }
-    cout << endl;
     }
     cout << endl;
-    //ma tran chuyen vi 2
-    for(int i = n-1;i>=0;i--){
-        for(int j = n-1;j>=0;j--){
-            cout << a[i][j] << " ";
-        }
-        cout << endl;
-    }
-    cout << endl;
-    //ma tran chuyen vi 3
-    for(int i = n-1;i>=0;i--){
-        for(int j = n-1;j>=0;j--){
-            cout << a[j][i] << " ";
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<m;j++){
+            cout << sum[i][j] << " ";
         }
         cout << endl;
     }
     cout << endl;
-    //ma tran chuyen vi 4
-    for(int i = n-1;i>=0;i--){
-        for(int j = 0;j<n;j++){
-            cout << a[j][i] << " ";
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<m;j++){
+            cout << minus[i][j] << " ";
         }
         cout << endl;
     }
