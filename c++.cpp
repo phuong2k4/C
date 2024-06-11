@@ -7349,71 +7349,72 @@ int main(){
 // 4 5 6     4 5 6    [4*1+5*4+6*7] [4*2+5*5+6*8] [4*3+5*6+6*9]   [66,81,96]
 //           7 8 9
 
-int main(){
-    int n,m,p;
-    cin >> n >> m >> p;
-    int a[n][m], b[m][p], c[n][p];
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> a[i][j];
-        }
-    }
+// int main(){
+//     int n,m,p;
+//     cin >> n >> m >> p;
+//     int a[n][m], b[m][p], c[n][p];
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
 
-    for(int i = 0;i<m;i++){
-        for(int j = 0;j<p;j++){
-            cin >> b[i][j];
-        }
-    }
+//     for(int i = 0;i<m;i++){
+//         for(int j = 0;j<p;j++){
+//             cin >> b[i][j];
+//         }
+//     }
     
-    for(int i = 0 ;i<n;i++){
-        for(int j = 0;j<p;j++){
-            c[i][j] = 0;
-            for(int k = 0;k<m;k++){
-                c[i][j] += a[i][k] * b[k][j];
-            }
-        }
-    }
+//     for(int i = 0 ;i<n;i++){
+//         for(int j = 0;j<p;j++){
+//             c[i][j] = 0;
+//             for(int k = 0;k<m;k++){
+//                 c[i][j] += a[i][k] * b[k][j];
+//             }
+//         }
+//     }
 
-    for(int i= 0;i<n;i++){
-        for(int j = 0;j<p;j++){
-            cout << c[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     for(int i= 0;i<n;i++){
+//         for(int j = 0;j<p;j++){
+//             cout << c[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
-//nhan ma tran chuyen vi
-int main(){
-    int n,m;
-    cin >> n >> m;
-    int a[n][m];
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> a[i][j];
-        }
-    }
-    // int b[m][n];
-    // for (int i = 0;i<m;i++){
-    //     for(int j = 0;j<n;j++){
-    //         b[i][j] = a[j][i];
-    //     }
-    // }
-    int c[n][n];
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            c[i][j]=0;
-            for(int k = 0;k<m;k++){
-                c[i][j] += a[i][k] * a[j][k];
-            }
-        }
-    }
+// //nhan ma tran chuyen vi
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m];
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+//     // int b[m][n];
+//     // for (int i = 0;i<m;i++){
+//     //     for(int j = 0;j<n;j++){
+//     //         b[i][j] = a[j][i];
+//     //     }
+//     // }
+//     int c[n][n];
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             c[i][j]=0;
+//             for(int k = 0;k<m;k++){
+//                 c[i][j] += a[i][k] * a[j][k];
+//             }
+//         }
+//     }
     
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << c[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << c[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+//end 4h26 12/6
