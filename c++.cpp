@@ -7249,7 +7249,7 @@ int main(){
 //     cout << count;
 //     return 0;
 // }
-
+//kalinux convert
 
 //in mang 2 chieu theo nhieu cach khac nhau
 
@@ -7298,41 +7298,120 @@ int main(){
 // }
 
 ///tong va hieu cua 2 ma tran cung cap
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m], b[n][m];
+//     for(int i = 0 ;i<n;i++){
+//         for (int j = 0; j < m; j++)
+//         {
+//             cin >> a[i][j];
+//         }
+//     }
+//     for(int i = 0 ;i<n;i++){
+//         for (int j = 0; j < m; j++)
+//         {
+//             cin >> b[i][j];
+//         }
+//     }
+
+//     int sum[n][m], minus[n][m];
+//     for(int i = 0;i<n;i++){
+//         for(int j =0 ;j<m;j++){
+//             sum[i][j] = a[i][j]+b[i][j];
+//             minus[i][j] = a[i][j]-b[i][j];
+//         }
+//     }
+//     cout << endl;
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cout << sum[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cout << minus[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+////nhan 2 ma tran 
+// nhan va nhan duoc chi khi so phan tu cua ma tran 1 = so cot cua ma tran 2
+// lay hang ma tran 1 nhan voi cot ma tran 2
+// a[n][m] * b[m][p] = c[n][p]
+
+// 1 2 3  *  1 2 3  = [1*1+2*4+3*7] [1*2+2*5+3*8] [1*3+2*6+3*9] = [30,36,42]
+// 4 5 6     4 5 6    [4*1+5*4+6*7] [4*2+5*5+6*8] [4*3+5*6+6*9]   [66,81,96]
+//           7 8 9
+
 int main(){
-    int n,m;
-    cin >> n >> m;
-    int a[n][m], b[n][m];
-    for(int i = 0 ;i<n;i++){
-        for (int j = 0; j < m; j++)
-        {
+    int n,m,p;
+    cin >> n >> m >> p;
+    int a[n][m], b[m][p], c[n][p];
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<m;j++){
             cin >> a[i][j];
         }
     }
-    for(int i = 0 ;i<n;i++){
-        for (int j = 0; j < m; j++)
-        {
+
+    for(int i = 0;i<m;i++){
+        for(int j = 0;j<p;j++){
             cin >> b[i][j];
         }
     }
-
-    int sum[n][m], minus[n][m];
-    for(int i = 0;i<n;i++){
-        for(int j =0 ;j<m;j++){
-            sum[i][j] = a[i][j]+b[i][j];
-            minus[i][j] = a[i][j]-b[i][j];
+    
+    for(int i = 0 ;i<n;i++){
+        for(int j = 0;j<p;j++){
+            c[i][j] = 0;
+            for(int k = 0;k<m;k++){
+                c[i][j] += a[i][k] * b[k][j];
+            }
         }
     }
-    cout << endl;
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cout << sum[i][j] << " ";
+
+    for(int i= 0;i<n;i++){
+        for(int j = 0;j<p;j++){
+            cout << c[i][j] << " ";
         }
         cout << endl;
     }
-    cout << endl;
+    return 0;
+}
+
+//nhan ma tran chuyen vi
+int main(){
+    int n,m;
+    cin >> n >> m;
+    int a[n][m];
     for(int i = 0;i<n;i++){
         for(int j = 0;j<m;j++){
-            cout << minus[i][j] << " ";
+            cin >> a[i][j];
+        }
+    }
+    // int b[m][n];
+    // for (int i = 0;i<m;i++){
+    //     for(int j = 0;j<n;j++){
+    //         b[i][j] = a[j][i];
+    //     }
+    // }
+    int c[n][n];
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<n;j++){
+            c[i][j]=0;
+            for(int k = 0;k<m;k++){
+                c[i][j] += a[i][k] * a[j][k];
+            }
+        }
+    }
+    
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<n;j++){
+            cout << c[i][j] << " ";
         }
         cout << endl;
     }
