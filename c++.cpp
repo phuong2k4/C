@@ -7631,46 +7631,124 @@ int main(){
 
 //kiem tra so tang giam
 
-int check(int n){
-    for(int i = 2;i<=sqrt(n);i++){
-        if(n%i==0){
-            return 0;
-        }
-    }
-    return n>1;
+// int check(int n){
+//     for(int i = 2;i<=sqrt(n);i++){
+//         if(n%i==0){
+//             return 0;
+//         }
+//     }
+//     return n>1;
+// }
+
+// int tang(int n){
+//     while(n>=10){
+//         int flag = n%10;
+//         if((n/10)%10 >= flag){
+//             return 0;
+//         }
+//         n/=10;
+//     }
+//     return 1;
+// }
+
+// int giam(int n){
+//     while(n>=10){
+//         int flag = n%10;
+//         if((n/10)%10 <= flag){
+//             return 0;
+//         }
+//         n/=10;
+//     }
+//     return 1;
+// }
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     int cnt = 0;
+//     for(int i = pow(10,n-1);i<pow(10,n);i++){
+//         if(check(i) && (tang(i) || giam(i))){
+//             ++cnt;
+//         }
+//     }
+//     cout << cnt;
+//     return 0;
+// }
+
+
+// sap xep ma tran theo hang va cot 
+
+//thuat toan sap xep
+int cmp(const void *a,const void *b){
+    int *x = (int*)a;
+    int *y = (int*)b;
+    return *x-*y;
 }
 
-int tang(int n){
-    while(n>=10){
-        int flag = n%10;
-        if((n/10)%10 >= flag){
-            return 0;
+void selectionSort(int a[], int n){
+    for(int i = 0;i<n;i++){
+        int min = i;
+        for(int j=i+1;j<n;j++){
+            if(a[min] > a[j]){
+                min = j;
+            }
         }
-        n/=10;
+        int flag = a[min];
+        a[min] = a[i];
+        a[i] = flag; 
     }
-    return 1;
 }
 
-int giam(int n){
-    while(n>=10){
-        int flag = n%10;
-        if((n/10)%10 <= flag){
-            return 0;
-        }
-        n/=10;
-    }
-    return 1;
-}
-
+// sap xep ma tran theo hang
 int main(){
-    int n;
-    cin >> n;
-    int cnt = 0;
-    for(int i = pow(10,n-1);i<pow(10,n);i++){
-        if(check(i) && (tang(i) || giam(i))){
-            ++cnt;
+    int n,m;
+    cin >> n >> m;
+    int a[n][m];
+    for(int i =0;i<n;i++){
+        for(int j =0;j<m;j++){
+            cin >> a[i][j];
         }
     }
-    cout << cnt;
+
+    for(int i =0;i<n;i++){
+        // qsort(a[i],m,sizeof(int), cmp);
+        selectionSort(a[i], m);
+    }
+    for(int i =0;i<n;i++){
+        for(int j =0;j<m;j++){
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}   
+
+//sap xep ma tran theo cot ( ma tran chuyen vi)
+int main(){
+    int n,m;
+    cin >> n >> m;
+    int a[n][m], b[m][n];
+    for(int i =0;i<n;i++){
+        for(int j= 0;j<m;j++){
+            cin >> a[i][j];
+        }
+    }
+
+    for(int i = 0;i<n;i++){
+        for(int j=0;j<m;j++){
+            b[i][j] = a[j][i];
+        }
+    }
+
+    for(int i =0;i<n;i++){
+        selectionSort(b[i],m);
+    }
+
+    for(int i =0;i<m;i++){
+        for(int j = 0;j<n;j++){
+            cout << b[i][j] << " ";
+       }
+       cout << endl;
+    }
     return 0;
 }
