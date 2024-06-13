@@ -7422,94 +7422,217 @@ int main(){
 
 // ma tran xoay oc
 
-int main(){
-    int n;
-    cin >> n;
-    int a[n][n], cnt = 1;
-    int h1 = 0, h2=n-1,c1=0,c2=n-1;
-    while(h1<=h2&&c1<=c2){
-        for(int i = c1;i<=c2;i++){
-            a[h1][i]=cnt;
-            ++cnt;
-        }
-        ++h1;
-        for(int i = h1;i<=h2;i++){
-            a[i][c2]=cnt;
-            ++cnt;
-        }
-        --c2;
-        if (c1<=c2){
-            for(int i = c2;i>=c1;i--){
-                a[h2][i]=cnt;
-                ++cnt;
-            }
-            --h2;
-        }
-        if (h1<=h2){
-            for(int i = h2;i>=h1;i--){
-                a[i][c1]=cnt;
-                ++cnt;
-            }
-            ++c1;
-        }
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n][n], cnt = 1;
+//     int h1 = 0, h2=n-1,c1=0,c2=n-1;
+//     while(h1<=h2&&c1<=c2){
+//         for(int i = c1;i<=c2;i++){
+//             a[h1][i]=cnt;
+//             ++cnt;
+//         }
+//         ++h1;
+//         for(int i = h1;i<=h2;i++){
+//             a[i][c2]=cnt;
+//             ++cnt;
+//         }
+//         --c2;
+//         if (c1<=c2){
+//             for(int i = c2;i>=c1;i--){
+//                 a[h2][i]=cnt;
+//                 ++cnt;
+//             }
+//             --h2;
+//         }
+//         if (h1<=h2){
+//             for(int i = h2;i>=h1;i--){
+//                 a[i][c1]=cnt;
+//                 ++cnt;
+//             }
+//             ++c1;
+//         }
         
-    }
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << a[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     }
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
-// ma tran xoay oc nguoc
+// // ma tran xoay oc nguoc
 
-int main(){
-    int n;
-    cin >> n;
-    int a[n][n], cnt = n*n;
-    int h1 = 0, h2=n-1,c1=0,c2=n-1;
-    while(h1<=h2&&c1<=c2){
-        for(int i = c1;i<=c2;i++){
-            a[h1][i]=cnt;
-            --cnt;
-        }
-        ++h1;
-        for(int i = h1;i<=h2;i++){
-            a[i][c2]=cnt;
-            --cnt;
-        }
-        --c2;
-        if (c1<=c2){
-            for(int i = c2;i>=c1;i--){
-                a[h2][i]=cnt;
-                --cnt;
-            }
-            --h2;
-        }
-        if (h1<=h2){
-            for(int i = h2;i>=h1;i--){
-                a[i][c1]=cnt;
-                --cnt;
-            }
-            ++c1;
-        }
+// int main(){
+//     int n;
+//     cin >> n;
+//     int a[n][n], cnt = n*n;
+//     int h1 = 0, h2=n-1,c1=0,c2=n-1;
+//     while(h1<=h2&&c1<=c2){
+//         for(int i = c1;i<=c2;i++){
+//             a[h1][i]=cnt;
+//             --cnt;
+//         }
+//         ++h1;
+//         for(int i = h1;i<=h2;i++){
+//             a[i][c2]=cnt;
+//             --cnt;
+//         }
+//         --c2;
+//         if (c1<=c2){
+//             for(int i = c2;i>=c1;i--){
+//                 a[h2][i]=cnt;
+//                 --cnt;
+//             }
+//             --h2;
+//         }
+//         if (h1<=h2){
+//             for(int i = h2;i>=h1;i--){
+//                 a[i][c1]=cnt;
+//                 --cnt;
+//             }
+//             ++c1;
+//         }
         
-    }
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << a[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     }
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
-// ma tran xoay oc nguyen to
+// // ma tran xoay oc nguyen to
+
+// int check(int n){
+//     for(int i=2;i<=sqrt(n);i++){
+//         if(n%i==0){
+//             return 0;
+//         }
+//     }
+//     return n>1;
+// }
+
+// int p[100];
+
+// void sang(){
+//     int i = 0,cnt = 0;
+//     while(cnt<100){
+//         if(check(i)){
+//             p[cnt] = i;
+//             cnt++;
+//         }
+//         ++i;
+//     }
+// }
+
+
+// int main(){
+//     sang();
+//     int n;
+//     cin >> n;
+//     int a[n][n], cnt = 0;
+//     int h1 = 0, h2=n-1,c1=0,c2=n-1;
+//     while(h1<=h2&&c1<=c2){
+//         for(int i = c1;i<=c2;i++){
+//             a[h1][i]= p[cnt];
+//             ++cnt;
+//         }
+//         ++h1;
+//         for(int i = h1;i<=h2;i++){
+//             a[i][c2]=p[cnt];
+//             ++cnt;
+//         }
+//         --c2;
+//         if (c1<=c2){
+//             for(int i = c2;i>=c1;i--){
+//                 a[h2][i]=p[cnt];
+//                 ++cnt;
+//             }
+//             --h2;
+//         }
+//         if (h1<=h2){
+//             for(int i = h2;i>=h1;i--){
+//                 a[i][c1]=p[cnt];
+//                 ++cnt;
+//             }
+//             ++c1;
+//         }
+        
+//     }
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+// //ma tran xoay oc fibonacci
+
+// long long fibo[100];
+
+// void fibonacci(){
+//     fibo[0]=0;
+//     fibo[1]=1;
+//     for(int i = 2;i<100;i++){
+//         fibo[i] = fibo[i-1] + fibo[i-2];
+//     }
+// }
+
+// int main(){
+//     fibonacci();
+//     int n;
+//     cin >> n;
+//     int a[n][n], cnt = 0;
+//     int h1 = 0, h2=n-1,c1=0,c2=n-1;
+//     while(h1<=h2&&c1<=c2){
+//         for(int i = c1;i<=c2;i++){
+//             a[h1][i]= fibo[cnt];
+//             ++cnt;
+//         }
+//         ++h1;
+//         for(int i = h1;i<=h2;i++){
+//             a[i][c2]=fibo[cnt];
+//             ++cnt;
+//         }
+//         --c2;
+//         if (c1<=c2){
+//             for(int i = c2;i>=c1;i--){
+//                 a[h2][i]=fibo[cnt];
+//                 ++cnt;
+//             }
+//             --h2;
+//         }
+//         if (h1<=h2){
+//             for(int i = h2;i>=h1;i--){
+//                 a[i][c1]=fibo[cnt];
+//                 ++cnt;
+//             }
+//             ++c1;
+//         }
+        
+//     }
+//     for(int i = 0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+
+//kiem tra so tang giam
 
 int check(int n){
-    for(int i=2;i<=sqrt(n);i++){
+    for(int i = 2;i<=sqrt(n);i++){
         if(n%i==0){
             return 0;
         }
@@ -7517,112 +7640,37 @@ int check(int n){
     return n>1;
 }
 
-int p[100];
-
-void sang(){
-    int i = 0,cnt = 0;
-    while(cnt<100){
-        if(check(i)){
-            p[cnt] = i;
-            cnt++;
+int tang(int n){
+    while(n>=10){
+        int flag = n%10;
+        if((n/10)%10 >= flag){
+            return 0;
         }
-        ++i;
+        n/=10;
     }
+    return 1;
 }
 
-
-int main(){
-    sang();
-    int n;
-    cin >> n;
-    int a[n][n], cnt = 0;
-    int h1 = 0, h2=n-1,c1=0,c2=n-1;
-    while(h1<=h2&&c1<=c2){
-        for(int i = c1;i<=c2;i++){
-            a[h1][i]= p[cnt];
-            ++cnt;
+int giam(int n){
+    while(n>=10){
+        int flag = n%10;
+        if((n/10)%10 <= flag){
+            return 0;
         }
-        ++h1;
-        for(int i = h1;i<=h2;i++){
-            a[i][c2]=p[cnt];
-            ++cnt;
-        }
-        --c2;
-        if (c1<=c2){
-            for(int i = c2;i>=c1;i--){
-                a[h2][i]=p[cnt];
-                ++cnt;
-            }
-            --h2;
-        }
-        if (h1<=h2){
-            for(int i = h2;i>=h1;i--){
-                a[i][c1]=p[cnt];
-                ++cnt;
-            }
-            ++c1;
-        }
-        
+        n/=10;
     }
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << a[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
-
-//ma tran xoay oc fibonacci
-
-long long fibo[100];
-
-void fibonacci(){
-    fibo[0]=0;
-    fibo[1]=1;
-    for(int i = 2;i<100;i++){
-        fibo[i] = fibo[i-1] + fibo[i-2];
-    }
+    return 1;
 }
 
 int main(){
-    fibonacci();
     int n;
     cin >> n;
-    int a[n][n], cnt = 0;
-    int h1 = 0, h2=n-1,c1=0,c2=n-1;
-    while(h1<=h2&&c1<=c2){
-        for(int i = c1;i<=c2;i++){
-            a[h1][i]= fibo[cnt];
+    int cnt = 0;
+    for(int i = pow(10,n-1);i<pow(10,n);i++){
+        if(check(i) && (tang(i) || giam(i))){
             ++cnt;
         }
-        ++h1;
-        for(int i = h1;i<=h2;i++){
-            a[i][c2]=fibo[cnt];
-            ++cnt;
-        }
-        --c2;
-        if (c1<=c2){
-            for(int i = c2;i>=c1;i--){
-                a[h2][i]=fibo[cnt];
-                ++cnt;
-            }
-            --h2;
-        }
-        if (h1<=h2){
-            for(int i = h2;i>=h1;i--){
-                a[i][c1]=fibo[cnt];
-                ++cnt;
-            }
-            ++c1;
-        }
-        
     }
-    for(int i = 0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << a[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << cnt;
     return 0;
 }
