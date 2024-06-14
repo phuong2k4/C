@@ -6934,7 +6934,7 @@ int main(){
 //     return -1;
 // }
 
-// //ham qsort tri tuyet doi (gt nho dung truoc)
+// //ham qsort tri tuyet doi (gt nho dung truoc`)
 // int cmpAbs_if_same_value(const void *a, const void *b){
 //     int *x = (int*)a;
 //     int *y = (int*)b;
@@ -7679,76 +7679,114 @@ int main(){
 // sap xep ma tran theo hang va cot 
 
 //thuat toan sap xep
-int cmp(const void *a,const void *b){
-    int *x = (int*)a;
-    int *y = (int*)b;
-    return *x-*y;
-}
+// int cmp(const void *a,const void *b){
+//     int *x = (int*)a;
+//     int *y = (int*)b;
+//     return *x-*y;
+// }
 
-void selectionSort(int a[], int n){
-    for(int i = 0;i<n;i++){
-        int min = i;
-        for(int j=i+1;j<n;j++){
-            if(a[min] > a[j]){
-                min = j;
-            }
-        }
-        int flag = a[min];
-        a[min] = a[i];
-        a[i] = flag; 
-    }
-}
+// void selectionSort(int a[], int n){
+//     for(int i = 0;i<n;i++){
+//         int min = i;
+//         for(int j=i+1;j<n;j++){
+//             if(a[min] > a[j]){
+//                 min = j;
+//             }
+//         }
+//         int flag = a[min];
+//         a[min] = a[i];
+//         a[i] = flag; 
+//     }
+// }
 
-// sap xep ma tran theo hang
-int main(){
+// // sap xep ma tran theo hang
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m];
+//     for(int i =0;i<n;i++){
+//         for(int j =0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+
+//     for(int i =0;i<n;i++){
+//         // qsort(a[i],m,sizeof(int), cmp);
+//         selectionSort(a[i], m);
+//     }
+//     for(int i =0;i<n;i++){
+//         for(int j =0;j<m;j++){
+//             cout << a[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }   
+
+// //sap xep ma tran theo cot ( ma tran chuyen vi)
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+//     int a[n][m], b[m][n];
+//     for(int i =0;i<n;i++){
+//         for(int j= 0;j<m;j++){
+//             cin >> a[i][j];
+//         }
+//     }
+
+//     for(int i = 0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             b[i][j] = a[j][i];
+//         }
+//     }
+
+//     for(int i =0;i<n;i++){
+//         selectionSort(b[i],m);
+//     }
+
+//     for(int i =0;i<m;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << b[i][j] << " ";
+//        }
+//        cout << endl;
+//     }
+//     return 0;
+// }
+
+
+////mang ki tu trong C, C++ 
+    // nhan chuoi kt tu ban phim (khi gap \n va " " hoac '\0' se ngat chuoi)
+    // function nhan kt ban phim (dung khi muon ngat chuoi xuong dong)
+    // nhan chuoi kt tu ban phim /nhan phim enter (chi ngat chuoi khi gap \n "khong nhan ham getchar()")
+
+    // neu khai bao mot bien chuoi ki tu vd 10 char nhung nhap vao hon 10 char 
+    // nhung ki tu khong duoc luu trong chuoi se tu dong luu o mot dia chi rac
+    // 'l' 'e' '\0' 'v' 'u' '\0' 'm' 'i' 'n' 'h' '\0' 'n' 'a' 'm' '\0'
+    //  '\0' la ki tu null 
+
+int main()
+{
+    // char c[1000],a[1000];
+    // scanf("%s",&a); 
+    // getchar(); 
+    // fgets(c, sizeof(c),stdin); 
+    // printf("%s",c);
+    // printf("%s",a);
+
+
+    char mang2chieu[100][100];
     int n,m;
     cin >> n >> m;
-    int a[n][m];
     for(int i =0;i<n;i++){
-        for(int j =0;j<m;j++){
-            cin >> a[i][j];
+        for(int j = 0;j<m;j++){
+            cin >> mang2chieu[i][j];
         }
     }
-
     for(int i =0;i<n;i++){
-        // qsort(a[i],m,sizeof(int), cmp);
-        selectionSort(a[i], m);
-    }
-    for(int i =0;i<n;i++){
-        for(int j =0;j<m;j++){
-            cout << a[i][j] << " ";
+        for(int j = 0;j<n;j++){
+            cout << mang2chieu[i][j] << " ";
         }
         cout << endl;
-    }
-    return 0;
-}   
-
-//sap xep ma tran theo cot ( ma tran chuyen vi)
-int main(){
-    int n,m;
-    cin >> n >> m;
-    int a[n][m], b[m][n];
-    for(int i =0;i<n;i++){
-        for(int j= 0;j<m;j++){
-            cin >> a[i][j];
-        }
-    }
-
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<m;j++){
-            b[i][j] = a[j][i];
-        }
-    }
-
-    for(int i =0;i<n;i++){
-        selectionSort(b[i],m);
-    }
-
-    for(int i =0;i<m;i++){
-        for(int j = 0;j<n;j++){
-            cout << b[i][j] << " ";
-       }
-       cout << endl;
     }
     return 0;
 }
