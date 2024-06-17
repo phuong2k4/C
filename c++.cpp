@@ -7875,3 +7875,85 @@ int main(){
     }
     return 0;
 }
+
+
+
+// bai tap code struct
+// tim kiem
+// sap xep
+
+struct Sv{
+    char name[100];
+    float gpa;
+};
+
+typedef struct Sv sv;
+
+void text(Sv *a){
+    scanf("%s",&a->name);
+    getchar();
+    scanf("%f",&a->gpa);
+}
+void print(Sv a){
+    printf("%s : %.1f\n", a.name, a.gpa);
+}
+
+void search(Sv a[],int n, char m[100]){
+    for(int i =0;i<n;i++){
+        if(strcmp(m,a[i].name)==0){
+            print(a[i]);return;
+        }
+    }
+    printf("No data.");
+}
+
+void search1(Sv a[],int n){
+    float res = 0; int flag;
+    for(int i =0;i<n;i++){
+        if(a[i].gpa > res){
+            flag = i;
+            res = a[i].gpa;
+        }
+    }
+    print(a[flag]);
+}
+
+void selectionSort(Sv a[],int n){
+    for(int i =0;i<n;i++){
+        int min = i;
+        for(int j =i+1;j<n;j++){
+            if(a[min].gpa > a[j].gpa){
+                min = j;
+            }
+        }
+        Sv flag = a[i];
+        a[i] = a[min];
+        a[min] = flag;
+    }
+}
+
+int cmp(const void* a, const void* b){
+    Sv *x = (Sv*)a;
+    Sv *y = (Sv*)b;
+    return x->gpa - y->gpa;
+}
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    Sv a[n];
+    for(int i =0;i<n;i++) text(&a[i]);
+    for(int i =0;i<n;i++) print(a[i]);
+   
+    // printf("Nhap ma sinh vien can tim kiem: ");
+    // char s[100];
+    // scanf("%s",&s);
+    // search(a,n,s);
+   
+    // printf("Sinh vien co gpa cao nhat:");
+    // search1(a,n);
+    
+    // selectionSort(a,n);
+    qsort(a,n,sizeof(Sv),cmp);
+    for(int i =0;i<n;i++) print(a[i]);
+}
