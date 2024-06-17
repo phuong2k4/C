@@ -7764,29 +7764,196 @@ int main(){
     // 'l' 'e' '\0' 'v' 'u' '\0' 'm' 'i' 'n' 'h' '\0' 'n' 'a' 'm' '\0'
     //  '\0' la ki tu null 
 
-int main()
-{
+// int main()
+// {
     // char c[1000],a[1000];
     // scanf("%s",&a); 
     // getchar(); 
     // fgets(c, sizeof(c),stdin); 
     // printf("%s",c);
     // printf("%s",a);
+//     char mang2chieu[100][100];
+//     int n,m;
+//     cin >> n >> m;
+//     for(int i =0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> mang2chieu[i][j];
+//         }
+//     }
+//     for(int i =0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << mang2chieu[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
 
-    char mang2chieu[100][100];
-    int n,m;
-    cin >> n >> m;
-    for(int i =0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> mang2chieu[i][j];
-        }
+
+// struct in c
+struct structName{
+    //data
+};
+
+struct SinhVien{
+    char maSv[10];
+    char tenSv[100];
+    int namsinh;
+    double gpa;
+    char className[100];
+};
+
+typedef struct SinhVien sv;
+
+// In c we have struct in struct, below is example
+
+struct Date{
+    int day, month, year;
+};
+
+struct Time{
+    int second,minute,hour; 
+};
+
+// hover the main point
+struct TicketCinema{
+    Date DateUse;
+    Date DateExpired;
+    Time TimeUse;
+    Time TimeExpired;
+};
+
+
+// build function with parameter is struct
+
+sv nhap1(){
+    sv x;
+    scanf("%d",&x.namsinh);
+    getchar();
+    scanf("%f",&x.gpa);
+    return x;
+}
+
+void nhap2(sv *svN){
+    scanf("%s", &svN->maSv);
+    getchar();
+    fgets(svN->tenSv,sizeof(svN->tenSv),stdin);
+}
+
+void in(sv svN){
+    printf("%s, %s",svN.maSv,svN.tenSv);
+}
+
+int main(){
+/*
+    sv m01;
+    sv m02=m01;
+    //use dot operator to access value 
+    std::cin >> m01.maSv;
+    std::cin >> m01.tenSv;
+    std::cin >> m01.namsinh;
+    std::cin >> m01.gpa;
+    std::cin >> m01.className;
+    std::cout << m01.maSv << " | " << m01.tenSv << " | " << m01.namsinh << " | " << m01.gpa << " | " << m01.className << std::endl;
+*/
+
+    // struct TicketCinema KNJ;
+    // KNJ.DateUse.day = 16;
+    // KNJ.DateUse.month = 6;
+    // KNJ.DateUse.year = 2024;
+    // printf("%d %d %d",KNJ.DateUse.day,KNJ.DateUse.month,KNJ.DateUse.year);
+
+    sv a[1000];
+    int soluongsv;
+    scanf("%d",&soluongsv);
+    for(int i = 0 ;i<soluongsv;i++){
+        nhap2(&a[i]);
     }
-    for(int i =0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << mang2chieu[i][j] << " ";
-        }
-        cout << endl;
+    for(int i =0;i<soluongsv;i++){
+        in(a[i]);
     }
     return 0;
+}
+
+
+
+// bai tap code struct
+// tim kiem
+// sap xep
+
+struct Sv{
+    char name[100];
+    float gpa;
+};
+
+typedef struct Sv sv;
+
+void text(Sv *a){
+    scanf("%s",&a->name);
+    getchar();
+    scanf("%f",&a->gpa);
+}
+void print(Sv a){
+    printf("%s : %.1f\n", a.name, a.gpa);
+}
+
+void search(Sv a[],int n, char m[100]){
+    for(int i =0;i<n;i++){
+        if(strcmp(m,a[i].name)==0){
+            print(a[i]);return;
+        }
+    }
+    printf("No data.");
+}
+
+void search1(Sv a[],int n){
+    float res = 0; int flag;
+    for(int i =0;i<n;i++){
+        if(a[i].gpa > res){
+            flag = i;
+            res = a[i].gpa;
+        }
+    }
+    print(a[flag]);
+}
+
+void selectionSort(Sv a[],int n){
+    for(int i =0;i<n;i++){
+        int min = i;
+        for(int j =i+1;j<n;j++){
+            if(a[min].gpa > a[j].gpa){
+                min = j;
+            }
+        }
+        Sv flag = a[i];
+        a[i] = a[min];
+        a[min] = flag;
+    }
+}
+
+int cmp(const void* a, const void* b){
+    Sv *x = (Sv*)a;
+    Sv *y = (Sv*)b;
+    return x->gpa - y->gpa;
+}
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    Sv a[n];
+    for(int i =0;i<n;i++) text(&a[i]);
+    for(int i =0;i<n;i++) print(a[i]);
+   
+    // printf("Nhap ma sinh vien can tim kiem: ");
+    // char s[100];
+    // scanf("%s",&s);
+    // search(a,n,s);
+   
+    // printf("Sinh vien co gpa cao nhat:");
+    // search1(a,n);
+    
+    // selectionSort(a,n);
+    qsort(a,n,sizeof(Sv),cmp);
+    for(int i =0;i<n;i++) print(a[i]);
 }
