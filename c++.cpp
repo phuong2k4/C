@@ -7793,25 +7793,71 @@ int main(){
 
 
 // XAU CON CO THU TU TU DIEN TU LON DEN BE 
+// int main(){
+//     char c[1000];
+//     std::cin >> c;
+//     int position = 0,n = strlen(c);
+//     while(position < n){
+//         char flag = c[position];
+//         int lastPosition = position;
+//         for(int i =position;i<n;i++){
+//             if(c[i] > flag){
+//                 flag = c[i];
+//             }
+//         }
+//         for(int i =position;i<n;i++){
+//             if(c[i]==flag){
+//                 std::cout << c[i];
+//                 lastPosition = i;
+//             }
+//         }
+//         position = lastPosition + 1;
+//     }
+//     return 0;
+// }
+
+// tron xau / merge string 
+void merge(char s1[],char s2[],char s12[],int n){
+    int j = 0;
+    for(int i =0;i<n;i++){
+        s12[j++] = s2[i];
+        s12[j++] = s1[i];
+    }
+    s12[j] = '\0';
+}
+void split(char s1[],char s2[],char s12[],int n){
+    int j = 0;
+    for(int i =0;i<n;i++){
+        s1[i] = s12[j++];
+    }
+    for(int i=0;i<n;i++){
+        s2[i] = s12[j++];
+    }
+}
+
+int solve(int n){
+    char s1[n],s2[n],s12[n*2],tmp[n*2];
+    cin >> s1 >> s2 >> s12;
+    int cnt = 0;
+    char f1[n],f2[n];
+    strcpy(s1,f1);
+    strcpy(s2,f2);
+    while(1){
+        cnt++;
+        merge(s1,s2,tmp,n);
+        if(strcmp(s12,tmp)==0) return cnt;
+        split(s1,s2,tmp,n);
+        if(!strcmp(s1,f1) && !strcmp(s2,f2)) break;
+    }
+    return -1;
+}
+
 int main(){
-    char c[1000];
-    std::cin >> c;
-    int position = 0,n = strlen(c);
-    while(position < n){
-        char flag = c[position];
-        int lastPosition = position;
-        for(int i =position;i<n;i++){
-            if(c[i] > flag){
-                flag = c[i];
-            }
-        }
-        for(int i =position;i<n;i++){
-            if(c[i]==flag){
-                std::cout << c[i];
-                lastPosition = i;
-            }
-        }
-        position = lastPosition + 1;
+    while(1){
+        int n;
+        cin >> n;
+        if(!n) break;
+        cout << solve(n) << endl;
     }
     return 0;
 }
