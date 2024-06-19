@@ -7764,29 +7764,54 @@ int main(){
     // 'l' 'e' '\0' 'v' 'u' '\0' 'm' 'i' 'n' 'h' '\0' 'n' 'a' 'm' '\0'
     //  '\0' la ki tu null 
 
-int main()
-{
-    // char c[1000],a[1000];
-    // scanf("%s",&a); 
-    // getchar(); 
-    // fgets(c, sizeof(c),stdin); 
-    // printf("%s",c);
-    // printf("%s",a);
+// int main()
+// {
+//     // char c[1000],a[1000];
+//     // scanf("%s",&a); 
+//     // getchar(); 
+//     // fgets(c, sizeof(c),stdin); 
+//     // printf("%s",c);
+//     // printf("%s",a);
 
 
-    char mang2chieu[100][100];
-    int n,m;
-    cin >> n >> m;
-    for(int i =0;i<n;i++){
-        for(int j = 0;j<m;j++){
-            cin >> mang2chieu[i][j];
+//     char mang2chieu[100][100];
+//     int n,m;
+//     cin >> n >> m;
+//     for(int i =0;i<n;i++){
+//         for(int j = 0;j<m;j++){
+//             cin >> mang2chieu[i][j];
+//         }
+//     }
+//     for(int i =0;i<n;i++){
+//         for(int j = 0;j<n;j++){
+//             cout << mang2chieu[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+// XAU CON CO THU TU TU DIEN TU LON DEN BE 
+int main(){
+    char c[1000];
+    std::cin >> c;
+    int position = 0,n = strlen(c);
+    while(position < n){
+        char flag = c[position];
+        int lastPosition = position;
+        for(int i =position;i<n;i++){
+            if(c[i] > flag){
+                flag = c[i];
+            }
         }
-    }
-    for(int i =0;i<n;i++){
-        for(int j = 0;j<n;j++){
-            cout << mang2chieu[i][j] << " ";
+        for(int i =position;i<n;i++){
+            if(c[i]==flag){
+                std::cout << c[i];
+                lastPosition = i;
+            }
         }
-        cout << endl;
+        position = lastPosition + 1;
     }
     return 0;
 }
