@@ -393,36 +393,102 @@ using namespace std;
 //     return 0;
 // }
 
-int gcd(int a,int b){
-    if(b==0)return a;
-    return gcd(b,a%b);
-}
-const int maxn=100001;
-int a[maxn];
+// int gcd(int a,int b){
+//     if(b==0)return a;
+//     return gcd(b,a%b);
+// }
+// const int maxn=100001;
+// int a[maxn];
+// int main(){
+//     int t;
+//     cin >>t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         for(int i =0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int res = 0;
+//         for(int i = 0;i<n;i++){
+//             res = gcd(res,a[i]);
+//         }
+//         // if(res == 1) cout << 0 <<endl; continue;
+//         int ans = 1;//bang chinh no
+//         for(int i =2;i<sqrt(res);i++){
+//             if(res % i == 0)
+//             {
+//                 ++ans;
+//                 if(i != res / i) ++ans;
+//             }
+            
+//         }
+//         cout << ans << endl;
+//     }
+//     return 0;
+// }
+
+
+// diem can bang
+// gt: vi tri phan tu thoa man dieu kien:
+// tong cac phan tu truoc vi tri I bang tong cac phan tu sau vi tri I
+
+// for trau
 int main(){
     int t;
-    cin >>t;
+    cin >> t;
     while(t--){
         int n;
         cin >> n;
-        for(int i =0;i<n;i++){
+        int a[n];
+        for(int i=0;i<n;i++){
             cin >> a[i];
         }
-        int res = 0;
-        for(int i = 0;i<n;i++){
-            res = gcd(res,a[i]);
+        int sum = 0;
+        for(int i =0;i<n/2;i++){
+            sum +=a[i];
         }
-        // if(res == 1) cout << 0 <<endl; continue;
-        int ans = 1;//bang chinh no
-        for(int i =2;i<sqrt(res);i++){
-            if(res % i == 0)
-            {
-                ++ans;
-                if(i != res / i) ++ans;
+        int sum2 =0;
+        for(int i =n/2+1;i<n;i++){
+            sum2 += a[i];
+        }
+        if(sum == sum2){
+                cout << n/2;
+        }
+        else{
+            cout << -1;
+        }
+    }
+    return 0;
+}
+
+// for trau nhung hieu qua hon
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin >> a[i];
+        }
+        long long sum = 0;
+        for(int i =0;i<n;i++){
+            sum +=a[i];
+        }
+        bool ok = true;
+        long long left = 0;
+        for(int i =0;i<n;i++){
+            sum -=a[i];
+            if(sum==left){
+                cout << i << endl;
+                ok = false;
             }
-            
+            left+=a[i];
         }
-        cout << ans << endl;
+        if(ok){
+            cout << "-1";
+        }
     }
     return 0;
 }
