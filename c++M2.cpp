@@ -433,35 +433,69 @@ using namespace std;
 // tong cac phan tu truoc vi tri I bang tong cac phan tu sau vi tri I
 
 // for trau
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int i=0;i<n;i++){
-            cin >> a[i];
-        }
-        int sum = 0;
-        for(int i =0;i<n/2;i++){
-            sum +=a[i];
-        }
-        int sum2 =0;
-        for(int i =n/2+1;i<n;i++){
-            sum2 += a[i];
-        }
-        if(sum == sum2){
-                cout << n/2;
-        }
-        else{
-            cout << -1;
-        }
-    }
-    return 0;
-}
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int i=0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int sum = 0;
+//         for(int i =0;i<n/2;i++){
+//             sum +=a[i];
+//         }
+//         int sum2 =0;
+//         for(int i =n/2+1;i<n;i++){
+//             sum2 += a[i];
+//         }
+//         if(sum == sum2){
+//                 cout << n/2;
+//         }
+//         else{
+//             cout << -1;
+//         }
+//     }
+//     return 0;
+// }
 
-// for trau nhung hieu qua hon
+// // for trau nhung hieu qua hon
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int i=0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         long long sum = 0;
+//         for(int i =0;i<n;i++){
+//             sum +=a[i];
+//         }
+//         bool ok = true;
+//         long long left = 0;
+//         for(int i =0;i<n;i++){
+//             sum -=a[i];
+//             if(sum==left){
+//                 cout << i << endl;
+//                 ok = false;
+//             }
+//             left+=a[i];
+//         }
+//         if(ok){
+//             cout << "-1";
+//         }
+//     }
+//     return 0;
+// }
+
+
+//so co so lan xuat hien la le
+
 int main(){
     int t;
     cin >> t;
@@ -472,23 +506,11 @@ int main(){
         for(int i=0;i<n;i++){
             cin >> a[i];
         }
-        long long sum = 0;
-        for(int i =0;i<n;i++){
-            sum +=a[i];
+        int ans = a[0];
+        for(int i=1;i<n;i++){
+            ans^=a[i];
         }
-        bool ok = true;
-        long long left = 0;
-        for(int i =0;i<n;i++){
-            sum -=a[i];
-            if(sum==left){
-                cout << i << endl;
-                ok = false;
-            }
-            left+=a[i];
-        }
-        if(ok){
-            cout << "-1";
-        }
+        cout << ans << endl;
     }
     return 0;
 }
