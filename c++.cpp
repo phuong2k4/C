@@ -7860,3 +7860,61 @@ int main(){
     }
     return 0;
 }
+
+
+
+// struct
+struct num{
+    char val[100];
+    int fre;
+};
+
+typedef struct num num;
+int reversed(char c[]){
+    int l = 0, r=strlen(c)-1;
+    while(l<r){
+        if(c[l]!=c[r]){
+            return 0;
+        }
+        l++;r--;
+    }
+    return 1;
+}
+
+int n = 0;
+num a[1000];
+
+int find(char c[]){
+    for(int i =0;i<n;i++){
+        if(strcmp(c,a[i].val)==0){
+            return i;
+        }
+    }
+    return -1;
+}
+int cmp(const void *a, const void *b){
+    num *x = (num*)a;
+    num *y = (num*)b;
+    return *y->val - *x->val;
+}
+
+
+int main(){
+    char c[1000];
+    while(scanf("%s",&c) != -1){
+        if(reversed(c)){
+            int pos = find(c);
+            if(pos != -1){
+                a[pos].fre++;
+            }else{
+                strcpy(a[n].val,c);
+                a[n].fre = 1;
+                n++;
+            }
+        }
+    }
+    qsort(a,n,sizeof(num),cmp);
+    for(int i =0;i<n;i++){
+        printf("%s : %d",a[i].val,a[i].fre);
+    }
+}
