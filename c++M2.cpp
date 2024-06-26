@@ -496,192 +496,282 @@ using namespace std;
 
 //so co so lan xuat hien la le
 
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int i=0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int ans = a[0];
+//         for(int i=1;i<n;i++){
+//             ans^=a[i];
+//         }
+//         cout << ans << endl;
+//     }
+//     return 0;
+// }
+
+// // loai bo it nhat n meo khac mau, giu meo cung mau va in so meo do
+// int max(int a,int b){
+//     return a > b ? a : b;
+// }
+
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int i=0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int res = 1,dem = 1;
+//         for(int i=1;i<n;i++){
+//             if(a[i]==a[i-1]){
+//                 dem++;
+//             }
+//             res = max(res,dem);
+//         }
+//         cout << n-res << endl; 
+//     }
+// }
+
+
+// // sap xep mang 
+// // cung cap tap hop vi tri rieng biet 
+// // co the hoan doi cac pt a[pi] va a[pi+1]
+// // vd: [ 3 2 1 ] ; p[1,2] =>(1,2) [2 3 1] =>(2,3) [2 1 3] =>(1,2) [1 2 3]
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n,m;
+//         cin >> n >> m;
+//         int a[n];
+//         for(int i=0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int pos[101] ={0};
+//         for(int i=0;i<m;i++){
+//             int x;
+//             cin>>x;
+//             pos[x-1]=1;
+//         }
+//         for(int i =0;i<n;i++){
+//             if(pos[i]==0)continue;
+//             int index = i;
+//             while(index <n&& pos[index]){
+//                 ++index;
+//             }
+//             sort(a+i,a+index+1);
+//             i=index;
+//         }
+//         bool ok = true;
+//         for(int i =0;i<n;i++){
+//             if(a[i]>a[i+1]){
+//                 ok = false; break;
+//             }
+//         }
+//         ok ? cout << "yes" : cout << "no";
+//     }
+// }
+
+
+// // cu c giay se cap nhat tu 1 lan
+// // go tu giay thu a xong lai go giay thu b neu b-a<=c thi tu moi duoc them con khong thi bien mat
+// int main(){
+//     int t;
+//     cin >> t;
+//     while(t--){
+//         int n,c;
+//         cin >> n >> c;
+//         int a[n];
+//         for(int i =0;i<n;i++){
+//             cin >> a[i];
+//         }
+//         int cnt = 1,res = 0;
+//         for(int i =1;i<n;i++){
+//             if(a[i]-a[i-1] <= c){
+//                 ++cnt;
+//                 res = max(res,cnt);
+//             }
+//             else{
+//                 cnt=1;
+//             }
+//         }
+//         cout << res;
+//     }
+// }
+
+
+// // tong cac phan tu trong mang lon hon phan tu x va co so luong phan tu nho nhat
+
+// int main(){
+//     int t;
+//     cin >>t;
+//     while(t--){
+//         int n,x;
+//         cin >> n >> x;
+//         int a[n];
+//         for(int &c : a){
+//             cin >> c;
+//         }
+//         int left = 0, res = 1e9;
+//         long long sum =0;
+//         for(int r =0;r<n;r++){
+//             sum += a[r];
+//             while(sum > x){
+//                 res = min (res, r-left+1);
+//                 sum -= a[left];
+//                 ++left;
+//             }
+//         }
+//         if( res == 1e9 )cout << "-1";
+//         else{
+//             cout << res << endl;
+//         }
+//     }
+// }
+
+
+// // phan tu trung vi cua mang da duoc sap xep
+// // phan tu trung vi la phan tu dung giua 
+// // neu so phan tu la le thi lay phan tu be hon 
+
+// int main(){
+//     int t;
+//     cin >>t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int &c : a){
+//             cin >> c;
+//         }
+//         sort(a,a+n);
+//         if(n%2==1){
+//             cout << a[n / 2];
+//         }else{
+//             cout << a[n/2-1];
+//         }
+//     }
+// }
+
+// // tang mang
+// // [3 2 5 1 7] => 3-2=1 + 5-1=4 => 5 lan di chuyen
+// // tang gia tri cua bat ky phan tu nao len 1, in ra so lan di chuyen toi thieu
+// int main(){
+//     int t;
+//     cin >>t;
+//     while(t--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         for(int &c : a){
+//             cin >> c;
+//         }
+//         long long ans = 0;
+//         for(int i =1;i<n;i++){
+//             if(a[i]<a[i-1]){
+//                 ans+=a[i-1]-a[i];
+//                 a[i]=a[i-1];
+//             }
+//         }
+//         cout << ans;
+//     }
+// }
+
+
+// mang 2 chieu 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int i=0;i<n;i++){
-            cin >> a[i];
+    int n,m;
+    cin >> n >> m;
+    char a[n][m];
+    for(int i = 0;i<n;i++){
+        for(int j =0;j<m;j++){
+            cin >> a[i][j];
         }
-        int ans = a[0];
-        for(int i=1;i<n;i++){
-            ans^=a[i];
+    }
+    for(int i = 0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout << a[i][j] << " ";
         }
-        cout << ans << endl;
+        cout << endl;
     }
     return 0;
 }
 
-// loai bo it nhat n meo khac mau, giu meo cung mau va in so meo do
-int max(int a,int b){
-    return a > b ? a : b;
-}
+
+
+// vector
+// nhap mang 2 chieu voi moi dong co so luong phan tu khac nhau
 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int i=0;i<n;i++){
-            cin >> a[i];
-        }
-        int res = 1,dem = 1;
-        for(int i=1;i<n;i++){
-            if(a[i]==a[i-1]){
-                dem++;
-            }
-            res = max(res,dem);
-        }
-        cout << n-res << endl; 
-    }
-}
-
-
-// sap xep mang 
-// cung cap tap hop vi tri rieng biet 
-// co the hoan doi cac pt a[pi] va a[pi+1]
-// vd: [ 3 2 1 ] ; p[1,2] =>(1,2) [2 3 1] =>(2,3) [2 1 3] =>(1,2) [1 2 3]
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n,m;
-        cin >> n >> m;
-        int a[n];
-        for(int i=0;i<n;i++){
-            cin >> a[i];
-        }
-        int pos[101] ={0};
-        for(int i=0;i<m;i++){
+    int n;
+    cin >> n;
+    vector<int> a[n];
+    for(int i =0;i<n;i++){
+        int m;
+        cin >> m;
+        for(int j =0;j<m;j++){
             int x;
-            cin>>x;
-            pos[x-1]=1;
+            cin >> x;
+            a[i].push_back(x);
         }
-        for(int i =0;i<n;i++){
-            if(pos[i]==0)continue;
-            int index = i;
-            while(index <n&& pos[index]){
-                ++index;
-            }
-            sort(a+i,a+index+1);
-            i=index;
-        }
-        bool ok = true;
-        for(int i =0;i<n;i++){
-            if(a[i]>a[i+1]){
-                ok = false; break;
-            }
-        }
-        ok ? cout << "yes" : cout << "no";
     }
+    cout << endl; 
+    for (int i =0;i<n;i++){
+        for(int j = 0;j<a[i].size();j++){
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+// string 
+// nhap mot chuoi voi so luong phan tu moi dong khac nhau
+
+int main(){
+    int n;
+    cin >> n;
+    string s[n];
+    cin.ignore();
+    for(int i =0;i<n;i++){
+        getline(cin,s[i]);
+    }
+    for(int i=0;i<n;i++){
+        cout << s[i]  << " ";
+        cout << endl;
+    }
+    
+    cout << s[2];
 }
 
 
-// cu c giay se cap nhat tu 1 lan
-// go tu giay thu a xong lai go giay thu b neu b-a<=c thi tu moi duoc them con khong thi bien mat
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n,c;
-        cin >> n >> c;
-        int a[n];
-        for(int i =0;i<n;i++){
-            cin >> a[i];
-        }
-        int cnt = 1,res = 0;
-        for(int i =1;i<n;i++){
-            if(a[i]-a[i-1] <= c){
-                ++cnt;
-                res = max(res,cnt);
-            }
-            else{
-                cnt=1;
-            }
-        }
-        cout << res;
-    }
-}
 
-
-// tong cac phan tu trong mang lon hon phan tu x va co so luong phan tu nho nhat
+// bai tap coding 
 
 int main(){
-    int t;
-    cin >>t;
-    while(t--){
-        int n,x;
-        cin >> n >> x;
-        int a[n];
-        for(int &c : a){
-            cin >> c;
-        }
-        int left = 0, res = 1e9;
-        long long sum =0;
-        for(int r =0;r<n;r++){
-            sum += a[r];
-            while(sum > x){
-                res = min (res, r-left+1);
-                sum -= a[left];
-                ++left;
-            }
-        }
-        if( res == 1e9 )cout << "-1";
-        else{
-            cout << res << endl;
+    int n,m;
+    cin >> n >> m;
+    int a[n][m];
+    for(int i =0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin >> a[i][j];
         }
     }
-}
 
-
-// phan tu trung vi cua mang da duoc sap xep
-// phan tu trung vi la phan tu dung giua 
-// neu so phan tu la le thi lay phan tu be hon 
-
-int main(){
-    int t;
-    cin >>t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int &c : a){
-            cin >> c;
+    for(int i=0;i<m;i++){ //chi so hang
+        for(int j=0;j<n;j++){ // chi so cot
+            cout << a[j][i] << " ";
         }
-        sort(a,a+n);
-        if(n%2==1){
-            cout << a[n / 2];
-        }else{
-            cout << a[n/2-1];
-        }
+        cout << endl;
     }
-}
-
-// tang mang
-// [3 2 5 1 7] => 3-2=1 + 5-1=4 => 5 lan di chuyen
-// tang gia tri cua bat ky phan tu nao len 1, in ra so lan di chuyen toi thieu
-int main(){
-    int t;
-    cin >>t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        for(int &c : a){
-            cin >> c;
-        }
-        long long ans = 0;
-        for(int i =1;i<n;i++){
-            if(a[i]<a[i-1]){
-                ans+=a[i-1]-a[i];
-                a[i]=a[i-1];
-            }
-        }
-        cout << ans;
-    }
+    return 0;
 }
